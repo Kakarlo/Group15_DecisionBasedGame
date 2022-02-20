@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Decision_Based_Game</string>
+    <string name="app_name">Decision_Based_Game_Test</string>
     //default text
     <string name="default_txtView"> You are in Biology class, your teacher is discussing about the Performance Task that is due on Monday. What do you do?</string>
     <string name="default_Button1">Sample decision for the current situation</string>
@@ -7,15 +7,176 @@
     <string name="default_Button3">Sample text that would take up two lines within the button.</string>
     <string name="default_Button4">Sample text that would take up two lines within the button.</string>
     <string name="reset">RESET GAME</string>
-    /**ano ba toh?
 
     <string-array name="default_text">
+        //Scenario Prompt
         <item>You are in Biology class, your teacher is discussing about the Performance Task that is due on Monday. What do you do?</item>
+        //Choices
         <item>Sample text that would take up two lines within the button.</item>
         <item>Sample text that would take up two lines within the button.</item>
         <item>Sample text that would take up two lines within the button.</item>
         <item>Sample text that would take up two lines within the button.</item>
+        //1st Choice Directory?
+        <item>dialog_1_1</item>
+        //2nd Choice Directory?
+        <item>dialog_1_2</item>
+        //3rd Choice Directory?
+        <item>dialog_1_3</item>
+        //4th Choice Directory?
+        <item>dialog_1_4</item>
+        //character state
+        <item>character 1</item>
+        //background state
+        <item>background 1</item>
+        //dag dag lang pag may time
     </string-array>
+
+    <string-array name="templateFor4">
+        //Scenario Prompt
+        <item>Scenario Promt</item>
+        //Choices
+        <item>1st Choice</item>
+        <item>2nd Choice</item>
+        <item>3rd Choice</item>
+        <item>4th Choice</item>
+        //1st Choice Directory?
+        <item>1 choice scenario</item>
+        //2nd Choice Directory?
+        <item>2 choice scenario</item>
+        //3rd Choice Directory?
+        <item>3 choice scenario</item>
+        //4th Choice Directory?
+        <item>4 choice scenario</item>
+        //character state
+        <item>1</item>
+        //background state
+        <item>1</item>
+        //dag dag lang pag may time
+    </string-array>
+
+    <string-array name="templateFor3">
+        //Scenario Prompt
+        <item>Scenario Promt</item>
+        //Choices
+        <item>1st Choice</item>
+        <item>2nd Choice</item>
+        <item>3rd Choice</item>
+        //1st Choice Directory?
+        <item>1 choice scenario</item>
+        //2nd Choice Directory?
+        <item>2 choice scenario</item>
+        //3rd Choice Directory?
+        <item>3 choice scenario</item>
+        //character state
+        <item>1</item>
+        //background state
+        <item>1</item>
+        //dag dag lang pag may time
+    </string-array>
+
+    <string-array name="templateFor2">
+        //Scenario Prompt
+        <item>Scenario Promt</item>
+        //Choices
+        <item>1st Choice</item>
+        <item>2nd Choice</item>
+        //1st Choice Directory?
+        <item>1 choice scenario</item>
+        //2nd Choice Directory?
+        <item>2 choice scenario</item>
+        //character state
+        <item>1</item>
+        //background state
+        <item>1</item>
+        //dag dag lang pag may time
+    </string-array>
+
+    <string-array name="templateFor1">
+        //Scenario Prompt
+        <item>Scenario Promt</item>
+        //Choices
+        <item>1st Choice</item>
+        //1st Choice Directory?
+        <item>1 choice scenario</item>
+        //character state
+        <item>1</item>
+        //background state
+        <item>1</item>
+        //dag dag lang pag may time
+    </string-array>
+
+    ////////////Start////////////////////////
+
+    <string-array name="first_scene">
+        <item>Mc: Looks like biology class is about to start.\n
+Teacher: Good Morning class, for today the topic would be the Animal and Plant</item>
+        <item>Next</item>
+        <item>second_scene</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="second_scene">
+        <item>Loud Screams on the outside</item>
+        <item>Tell the teacher they should check out the screams</item>
+        <item>ignore</item>
+        <item>fourth_1</item>
+        <item>third_scene</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="third_scene">
+        <item>*You hear the Screams becoming Louder and Louder, Car Crashes Have Been heard really strong*</item>
+        <item>Tell the teacher they should check out the screams</item>
+        <item>ignore</item>
+        <item>fourth_1</item>
+        <item>third_scene</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="fourth_1">
+        <item>Teacher: (name of Mc) sit back down its some acidents going on down the streets and pay attention in class</item>
+        <item>next</item>
+        <item>fourth_2</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="fourth_2">
+        <item>A rushing person comes in the Science Lab screaming \n
+Person: RUN the school is in danger(might change this line sounds eh)</item>
+        <item>next</item>
+        <item>fourth_3</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="fourth_3">
+        <item>you and your teacher starts panicing and runs out of the laboratory \n
+You Run in the middle of the school only to find out a  huge infestation has been starting</item>
+        <item>next</item>
+        <item>fourth_4</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="fourth_4">
+        <item>Mc: I need to find a place to hide into or atleast be able to survive till help comes</item>
+        <item>Gym</item>
+        <item>Locker Room</item>
+        <item>Kitchen</item>
+        <item>Storage Room</item>
+        <item>first_scene</item>
+        <item>first_scene</item>
+        <item>first_scene</item>
+        <item>first_scene</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
+
+
 
     <string-array name="dialog_1_1">
         <item>Scenario 1_1</item>
@@ -23,6 +184,10 @@
         <item>choice 2</item>
         <item>choice 3</item>
         <item>choice 4</item>
+        <item>dialog_1_1</item>
+        <item>dialog_1_2</item>
+        <item>dialog_1_3</item>
+        <item>dialog_1_4</item>
         <item>image 2</item>
         <item>background 1</item>
     </string-array>
@@ -32,7 +197,11 @@
         <item>choice 2</item>
         <item>choice 3</item>
         <item>choice 4</item>
-        <item>image 3</item>
+        <item>dialog_1_1</item>
+        <item>dialog_1_2</item>
+        <item>dialog_1_3</item>
+        <item>dialog_1_4</item>
+        <item>image 2</item>
         <item>background 1</item>
     </string-array>
     <string-array name="dialog_1_3">
@@ -40,8 +209,10 @@
         <item>choice 1</item>
         <item>choice 2</item>
         <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 4</item>
+        <item>dialog_1_1</item>
+        <item>dialog_1_2</item>
+        <item>dialog_1_3</item>
+        <item>image 2</item>
         <item>background 1</item>
     </string-array>
     <string-array name="dialog_1_4">
@@ -50,7 +221,11 @@
         <item>choice 2</item>
         <item>choice 3</item>
         <item>choice 4</item>
-        <item>image 5</item>
+        <item>dialog_1_1</item>
+        <item>dialog_1_2</item>
+        <item>dialog_1_3</item>
+        <item>default_text</item>
+        <item>image 2</item>
         <item>background 1</item>
     </string-array>
     <string-array name="dialog_2_5">

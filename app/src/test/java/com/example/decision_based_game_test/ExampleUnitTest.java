@@ -1,4 +1,4 @@
-package com.example.decision_based_game;
+package com.example.decision_based_game_test;
 
 import org.junit.Test;
 
