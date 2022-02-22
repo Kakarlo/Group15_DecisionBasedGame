@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Decision_Based_Game_Test</string>
     //default text
-    <string name="default_txtView"> You are in Biology class, your teacher is discussing about the Performance Task that is due on Monday. What do you do?</string>
+    <string name="default_txtView">You are in Biology class, your teacher is discussing about the Performance Task that is due on Monday. What do you do?</string>
     <string name="default_Button1">Sample decision for the current situation</string>
     <string name="default_Button2">Sample text that would take up two lines within the button.</string>
     <string name="default_Button3">Sample text that would take up two lines within the button.</string>
@@ -28,6 +28,8 @@
         <item>character 1</item>
         //background state
         <item>background 1</item>
+        //Type of Scenario
+        <item>Dialog</item>
         //dag dag lang pag may time
     </string-array>
 
@@ -51,6 +53,8 @@
         <item>1</item>
         //background state
         <item>1</item>
+        //Type of Scenario
+        <item>Dialog</item>
         //dag dag lang pag may time
     </string-array>
 
@@ -71,6 +75,8 @@
         <item>1</item>
         //background state
         <item>1</item>
+        //Type of Scenario
+        <item>Dialog</item>
         //dag dag lang pag may time
     </string-array>
 
@@ -88,6 +94,8 @@
         <item>1</item>
         //background state
         <item>1</item>
+        //Type of Scenario
+        <item>Dialog</item>
         //dag dag lang pag may time
     </string-array>
 
@@ -102,6 +110,8 @@
         <item>1</item>
         //background state
         <item>1</item>
+        //Type of Scenario
+        <item>Dialog</item>
         //dag dag lang pag may time
     </string-array>
 
@@ -109,11 +119,12 @@
 
     <string-array name="first_scene">
         <item>Mc: Looks like biology class is about to start.\n
-Teacher: Good Morning class, for today the topic would be the Animal and Plant</item>
+        Teacher: Good Morning class, for today the topic would be the Animal and Plant</item>
         <item>Next</item>
         <item>second_scene</item>
         <item>1</item>
         <item>1</item>
+        <item>Dialog</item>
     </string-array>
 
     <string-array name="second_scene">
@@ -122,8 +133,9 @@ Teacher: Good Morning class, for today the topic would be the Animal and Plant</
         <item>ignore</item>
         <item>fourth_1</item>
         <item>third_scene</item>
+        <item>2</item>
         <item>1</item>
-        <item>1</item>
+        <item>Dialog</item>
     </string-array>
 
     <string-array name="third_scene">
@@ -134,6 +146,7 @@ Teacher: Good Morning class, for today the topic would be the Animal and Plant</
         <item>third_scene</item>
         <item>1</item>
         <item>1</item>
+        <item>Dialog</item>
     </string-array>
 
     <string-array name="fourth_1">
@@ -142,24 +155,27 @@ Teacher: Good Morning class, for today the topic would be the Animal and Plant</
         <item>fourth_2</item>
         <item>1</item>
         <item>1</item>
+        <item>Dialog</item>
     </string-array>
 
     <string-array name="fourth_2">
         <item>A rushing person comes in the Science Lab screaming \n
-Person: RUN the school is in danger(might change this line sounds eh)</item>
+        Person: RUN the school is in danger(might change this line sounds eh)</item>
         <item>next</item>
         <item>fourth_3</item>
         <item>1</item>
         <item>1</item>
+        <item>Dialog</item>
     </string-array>
 
     <string-array name="fourth_3">
         <item>you and your teacher starts panicing and runs out of the laboratory \n
-You Run in the middle of the school only to find out a  huge infestation has been starting</item>
+        You Run in the middle of the school only to find out a  huge infestation has been starting</item>
         <item>next</item>
         <item>fourth_4</item>
         <item>1</item>
         <item>1</item>
+        <item>Dialog</item>
     </string-array>
 
     <string-array name="fourth_4">
@@ -171,285 +187,10 @@ You Run in the middle of the school only to find out a  huge infestation has bee
         <item>first_scene</item>
         <item>first_scene</item>
         <item>first_scene</item>
-        <item>first_scene</item>
+        <item>second_scene</item>
         <item>1</item>
         <item>1</item>
+        <item>Dialog</item>
     </string-array>
 
-
-
-    <string-array name="dialog_1_1">
-        <item>Scenario 1_1</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>dialog_1_1</item>
-        <item>dialog_1_2</item>
-        <item>dialog_1_3</item>
-        <item>dialog_1_4</item>
-        <item>image 2</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_1_2">
-        <item>Scenario 1_2</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>dialog_1_1</item>
-        <item>dialog_1_2</item>
-        <item>dialog_1_3</item>
-        <item>dialog_1_4</item>
-        <item>image 2</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_1_3">
-        <item>Scenario 1_3</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>dialog_1_1</item>
-        <item>dialog_1_2</item>
-        <item>dialog_1_3</item>
-        <item>image 2</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_1_4">
-        <item>Scenario 1_4</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>dialog_1_1</item>
-        <item>dialog_1_2</item>
-        <item>dialog_1_3</item>
-        <item>default_text</item>
-        <item>image 2</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_5">
-        <item>Scenario 2_1</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_6">
-        <item>Scenario 3_1</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_7">
-        <item>Scenario 4_1</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_8">
-        <item>Scenario 5_1</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_9">
-        <item>Scenario 2_2</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_10">
-        <item>Scenario 3_2</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_11">
-        <item>Scenario 4_2</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_12">
-        <item>Scenario 5_2</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_13">
-        <item>Scenario 2_3</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_14">
-        <item>Scenario 3_3</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_15">
-        <item>Scenario 4_3</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_16">
-        <item>Scenario 5_3</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_17">
-        <item>Scenario 2_4</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_18">
-        <item>Scenario 3_4</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_19">
-        <item>Scenario 4_4</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-    <string-array name="dialog_2_20">
-        <item>Scenario 5_4</item>
-        <item>choice 1</item>
-        <item>choice 2</item>
-        <item>choice 3</item>
-        <item>choice 4</item>
-        <item>image 1</item>
-        <item>background 1</item>
-    </string-array>
-
-    <string name="dialog_2_5_1">You finished!</string>
-    <string name="dialog_2_5_2">You finished!</string>
-    <string name="dialog_2_5_3">You finished!</string>
-    <string name="dialog_2_5_4">You finished!</string>
-
-    <string name="dialog_2_6_1">You finished!</string>
-    <string name="dialog_2_6_2">You finished!</string>
-    <string name="dialog_2_6_3">You finished!</string>
-    <string name="dialog_2_6_4">You finished!</string>
-
-    <string name="dialog_2_7_1">You finished!</string>
-    <string name="dialog_2_7_2">You finished!</string>
-    <string name="dialog_2_7_3">You finished!</string>
-    <string name="dialog_2_7_4">You finished!</string>
-
-    <string name="dialog_2_8_1">You finished!</string>
-    <string name="dialog_2_8_2">You finished!</string>
-    <string name="dialog_2_8_3">You finished!</string>
-    <string name="dialog_2_8_4">You finished!</string>
-
-    <string name="dialog_2_9_1">You finished!</string>
-    <string name="dialog_2_9_2">You finished!</string>
-    <string name="dialog_2_9_3">You finished!</string>
-    <string name="dialog_2_9_4">You finished!</string>
-
-    <string name="dialog_2_10_1">You finished!</string>
-    <string name="dialog_2_10_2">You finished!</string>
-    <string name="dialog_2_10_3">You finished!</string>
-    <string name="dialog_2_10_4">You finished!</string>
-
-    <string name="dialog_2_11_1">You finished!</string>
-    <string name="dialog_2_11_2">You finished!</string>
-    <string name="dialog_2_11_3">You finished!</string>
-    <string name="dialog_2_11_4">You finished!</string>
-
-    <string name="dialog_2_12_1">You finished!</string>
-    <string name="dialog_2_12_2">You finished!</string>
-    <string name="dialog_2_12_3">You finished!</string>
-    <string name="dialog_2_12_4">You finished!</string>
-
-    <string name="dialog_2_13_1">You finished!</string>
-    <string name="dialog_2_13_2">You finished!</string>
-    <string name="dialog_2_13_3">You finished!</string>
-    <string name="dialog_2_13_4">You finished!</string>
-
-    <string name="dialog_2_14_1">You finished!</string>
-    <string name="dialog_2_14_2">You finished!</string>
-    <string name="dialog_2_14_3">You finished!</string>
-    <string name="dialog_2_14_4">You finished!</string>
-
-    <string name="dialog_2_15_1">You finished!</string>
-    <string name="dialog_2_15_2">You finished!</string>
-    <string name="dialog_2_15_3">You finished!</string>
-    <string name="dialog_2_15_4">You finished!</string>
-
-    <string name="dialog_2_16_1">You finished!</string>
-    <string name="dialog_2_16_2">You finished!</string>
-    <string name="dialog_2_16_3">You finished!</string>
-    <string name="dialog_2_16_4">You finished!</string>
-
-    <string name="dialog_2_17_1">You finished!</string>
-    <string name="dialog_2_17_2">You finished!</string>
-    <string name="dialog_2_17_3">You finished!</string>
-    <string name="dialog_2_17_4">You finished!</string>
-
-    <string name="dialog_2_18_1">You finished!</string>
-    <string name="dialog_2_18_2">You finished!</string>
-    <string name="dialog_2_18_3">You finished!</string>
-    <string name="dialog_2_18_4">You finished!</string>
-
-    <string name="dialog_2_19_1">You finished!</string>
-    <string name="dialog_2_19_2">You finished!</string>
-    <string name="dialog_2_19_3">You finished!</string>
-    <string name="dialog_2_19_4">You finished!</string>
-
-    <string name="dialog_2_20_1">You finished!</string>
-    <string name="dialog_2_20_2">You finished!</string>
-    <string name="dialog_2_20_3">You finished!</string>
-    <string name="dialog_2_20_4">You finished!</string>
 </resources>
