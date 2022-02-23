@@ -3,6 +3,7 @@ package com.example.decision_based_game_test;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.annotation.SuppressLint;
@@ -22,74 +23,183 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-
-    Animation fade,fadelate,fadelate2,fadelate3,fadelate4;
-    TextView textBox;
+    //Initiating Variables
+    Animation fade,fadelate,fadelate2,fadelate3,fadelate4,fadeInOut;
+    TextView textBox,popOut;
     ImageView imageView, backView;
     Button button,button2,button3,button4;
     String[] text,defText;
+    //Choice is the String [] that is to be loaded
+    //Check denotes the type of the String []
     String choice,check;
     Drawable image;
+    ConstraintLayout popOutLayout;
 
+    //Array ID (integer)
     int arrID;
+    //Image ID (integer)
     int imgID;
+    //Which image to play
     int imageState;
+    //Where the image data is in the String []
     int imageNum;
+    // Last item of the String []
     int lastItem;
+    //length of the String []
+    int textLength;
 
+    //Choice thingy
     int choice4,choice3,choice2,choice1;
 
+    //Indicates which button is pressed
     int buttonState;
-    int numOfChoice;//basta the number of choice will be determined by the function for textchange
+    //Number of choices a Scenario will offer
+    int numOfChoice;
+    //Which item was picked //TODO: could be made better for a more dynamic approach
+    int itemState;
+    int item,restricted;
+
+    boolean failed;
 
     //////////////////////test///////////////////////
 
-    //so when i pick a choice, the button will then get the corresponding string name array to set the dialog for the next scenario?
+    //So when i pick a choice, the button will then get the corresponding string name array to set the dialog for the next scenario?
+
+    public void arrayCheck() {
+        //checks if the scenario is now restricted
+        if (buttonState != 0 && !failed) {
+            choice = text[numOfChoice + buttonState];
+            arrID = getResources().getIdentifier(choice, "array", getPackageName());
+            text = getResources().getStringArray(arrID);
+            textLength = text.length;
+            Log.d(TAG, "//////////////1: " + choice + " //////////////2");
+        } else if (failed) {
+            choice = text[lastItem - 1];
+            Log.d(TAG, "////////////////////////////restricted: " +choice);
+            arrID = getResources().getIdentifier(choice, "array", getPackageName());
+            text = getResources().getStringArray(arrID);
+            textLength = text.length;
+            failed = false;
+        } else {
+            textLength = text.length;
+        }
+        Log.d(TAG, "array [] " + textLength);
+    }
 
     public void sceneCheck() {
-        //Sets the default text
-        if (numOfChoice == 0) {
-            text = getResources().getStringArray(R.array.first_scene);
+        //Hides the button
+        hideButton();
+        if (buttonState == 0) {
+            //Runs if no choices has been made
+            arrayCheck();
+            textChange();
+        } else if (restricted == 1) {
+            restricted--;
+            restricted();
+        } else {
+            arrayCheck();
+            lastItem = text.length - 1;
+            check = text[lastItem];
+            Log.d(TAG, "sceneCheck: " + check);
+            switch (check) {
+                case "Dialog":
+                    textChange();
+                    break;
+                case "Restricted":
+                    restricted = 1;
+                    textLength -=1; //Done as the Restricted Array has 1 more item than the rest
+                    textChange();
+                    break;
+                case "Item":
+                    item = 2;
+                    textChange();
+                    break;
+            }
         }
-        lastItem = text.length - 1;
-        check = text[lastItem];
-        switch (check) {
-            case "Dialog":
-                textChange();
-                break;
-            case "Restricted":
-                //restChange();
-                break;
-            case "Item":
-                //restChange();
-                break;
-        }
-
     }
 
     public void textChange() {
-        //Checks which String Array should be used
-        choice = text[numOfChoice+buttonState];
-        arrID = getResources().getIdentifier(choice, "array", getPackageName());
-        text = getResources().getStringArray(arrID);
+        Log.d(TAG, "textChange: " +choice +"  "+restricted);
         //Checks how many choices in that particular scene are
-        if (text.length == choice4){ //for 4 choices scenario
+        if (textLength == choice4){ //for 4 choices scenario
             choices4();
             imageChange();
             numOfChoice = 4;
-        } else if (text.length == choice3) { //for 3 choice scenario
+        } else if (textLength == choice3) { //for 3 choice scenario
             choices3();
             imageChange();
             numOfChoice = 3;
-        } else if (text.length == choice2) { // for 2 choice scenario
+        } else if (textLength == choice2) { // for 2 choice scenario
             choices2();
             imageChange();
             numOfChoice = 2;
-        } else if (text.length == choice1) { // for 1 choice scenario
+        } else if (textLength == choice1) { // for 1 choice scenario
             choices1();
             imageChange();
             numOfChoice = 1;
         }
+        //Checks the item state
+        if (item > 1) {
+            item--;
+        } else if (item == 1) {
+            itemState = buttonState;
+            item--;
+        }
+    }
+
+    public void restricted() {
+        //Checks if the first choice was pressed
+        Log.d(TAG, "itemState: " + itemState);
+        if (buttonState == 1) {
+            //Checks if the user got an item
+            if (itemState > 0) {
+                //Checks if the correct item was retrieved
+                if (itemState == 2) {
+                    Log.d(TAG, "itemState == 2"+choice);
+                    failed = false;
+                } else {
+                    popOut.setText("You didn't grab the wrong item, didn't you?");
+                    popOut();
+                    Log.d(TAG, "You didn't grab the wrong item, didn't you?" +choice);
+                    failed = true;
+                }
+                arrayCheck();
+                textChange();
+            } else {
+                popOut.setText("Ho ho, feeling lucky ey");
+                popOut();
+                Log.d(TAG, "Ho ho, feeling lucky ey");
+                failed = true;
+                arrayCheck();
+                textChange();
+            }
+        } else if (buttonState == 2) {
+            restricted = 0;
+            textChange();
+        }
+    }
+
+    public void popOut() {
+        popOutLayout.setVisibility(View.VISIBLE);
+        popOutLayout.startAnimation(fadeInOut);
+        popOutLayout.setClickable(true);
+        fadeInOut.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                popOutLayout.setVisibility(View.GONE);
+                popOutLayout.setClickable(false);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
     }
 
     public void choices4() {
@@ -103,18 +213,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button2.setEnabled(true);
         button3.setEnabled(true);
         button4.setEnabled(true);
-        //Sets the text and starts the animation
+        //Sets the text
         textBox.setText(text[0]);
-        textBox.startAnimation(fade);
         button.setText(text[1]);
-        button.startAnimation(fadelate);
         button2.setText(text[2]);
-        button2.startAnimation(fadelate2);
         button3.setText(text[3]);
-        button3.startAnimation(fadelate3);
         button4.setText(text[4]);
-        button4.startAnimation(fadelate4);
-        //sets the imageNumber
+        //Starts Animation
+//        textBox.startAnimation(fade);
+//        button.startAnimation(fadelate);
+//        button2.startAnimation(fadelate2);
+//        button3.startAnimation(fadelate3);
+//        button4.startAnimation(fadelate4);
+        //Sets the imageNumber
         imageNum = 9;
     }
 
@@ -123,23 +234,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button.setVisibility(View.VISIBLE);
         button2.setVisibility(View.VISIBLE);
         button3.setVisibility(View.VISIBLE);
-        button4.setVisibility(View.INVISIBLE);
         //Sets the buttons functionality
         button.setEnabled(true);
         button2.setEnabled(true);
         button3.setEnabled(true);
-        button4.setEnabled(false);
-        //Sets the text and starts the animation
+        //Sets the text
         textBox.setText(text[0]);
-        textBox.startAnimation(fade);
         button.setText(text[1]);
-        button.startAnimation(fadelate);
         button2.setText(text[2]);
-        button2.startAnimation(fadelate2);
         button3.setText(text[3]);
-        button3.startAnimation(fadelate3);
-        imageState = Integer.parseInt(text[7].replaceAll("[\\D]", ""));
-        //sets the imageNumber
+        //Starts Animation
+//        textBox.startAnimation(fade);
+//        button.startAnimation(fadelate);
+//        button2.startAnimation(fadelate2);
+//        button3.startAnimation(fadelate3);
+        //Sets the imageNumber
         imageNum = 7;
     }
 
@@ -147,45 +256,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Changes button visibility
         button.setVisibility(View.VISIBLE);
         button2.setVisibility(View.VISIBLE);
-        button3.setVisibility(View.INVISIBLE);
-        button4.setVisibility(View.INVISIBLE);
         //Sets the buttons functionality
         button.setEnabled(true);
         button2.setEnabled(true);
-        button3.setEnabled(false);
-        button4.setEnabled(false);
         //Sets the text and starts the animation
         textBox.setText(text[0]);
-        textBox.startAnimation(fade);
         button.setText(text[1]);
-        button.startAnimation(fadelate);
         button2.setText(text[2]);
-        button2.startAnimation(fadelate2);
-        //sets the imageNumber
+        //Starts Animation
+//        textBox.startAnimation(fade);
+//        button.startAnimation(fadelate);
+//        button2.startAnimation(fadelate2);
+        //Sets the imageNumber
         imageNum = 5;
     }
 
     public void choices1() {
         //Changes button visibility
         button.setVisibility(View.VISIBLE);
+        //Sets the buttons functionality
+        button.setEnabled(true);
+        //Sets the text and starts the animation
+        textBox.setText(text[0]);
+        button.setText(text[1]);
+        //Starts Animation
+        //textBox.startAnimation(fade);
+        //button.startAnimation(fadelate);
+        //Sets the imageNumber
+        imageNum = 3;
+    }
+
+    public void hideButton() {
+        //Changes button visibility
+        button.setVisibility(View.INVISIBLE);
         button2.setVisibility(View.INVISIBLE);
         button3.setVisibility(View.INVISIBLE);
         button4.setVisibility(View.INVISIBLE);
         //Sets the buttons functionality
-        button.setEnabled(true);
+        button.setEnabled(false);
         button2.setEnabled(false);
         button3.setEnabled(false);
         button4.setEnabled(false);
-        //Sets the text and starts the animation
-        textBox.setText(text[0]);
-        textBox.startAnimation(fade);
-        button.setText(text[1]);
-        button.startAnimation(fadelate);
-        //sets the imageNumber
-        imageNum = 3;
     }
 
     public void imageChange() {
+        //Changes image
         imageState = Integer.parseInt(text[imageNum].replaceAll("[\\D]", ""));
         if (imageState > 0) {
             imgID = getResources().getIdentifier("umaru" + imageState, "drawable", getPackageName());
@@ -200,6 +315,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button2.clearAnimation();
         button3.clearAnimation();
         button4.clearAnimation();
+        popOutLayout.clearAnimation();
     }
 
     @Override
@@ -225,6 +341,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //TextView Call
         textBox = findViewById(R.id.txtBox);
+        popOut = findViewById(R.id.popOut);
+
+        //Image View
         imageView = findViewById(R.id.imageView);
         backView = findViewById(R.id.backView);
 
@@ -239,13 +358,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fadelate3.setStartOffset(900);
         fadelate4 = AnimationUtils.loadAnimation(this, R.anim.fade_late);
         fadelate4.setStartOffset(1200);
+        fadeInOut = AnimationUtils.loadAnimation(this, R.anim.fade_in_out);
+
+        //Layout call
+        popOutLayout = findViewById(R.id.popOutLayout);
 
         //String [] call
         defText = getResources().getStringArray(R.array.default_text);
+        //Sets the default text
+        text = getResources().getStringArray(R.array.fourth_4);
+
+        //Sets the choice number
         choice4 = defText.length;
         choice3 = choice4 - 2;
         choice2 = choice3 - 2;
         choice1 = choice2 - 2;
+
 
         sceneCheck();
     }
@@ -253,6 +381,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
+        //Clear pending animation
         clearAnim();
         switch (v.getId()) {
             case R.id.button:

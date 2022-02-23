@@ -186,8 +186,55 @@
         <item>Storage Room</item>
         <item>first_scene</item>
         <item>first_scene</item>
-        <item>first_scene</item>
+        <item>fifth</item>
         <item>second_scene</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="fifth">
+        <item>Choose your weapon</item>
+        <item>Rocket Launcer</item>
+        <item>Key</item>
+        <item>Plasma ball</item>
+        <item>Martin Pangit</item>
+        <item>first_scene</item>
+        <item>key</item>
+        <item>key</item>
+        <item>key</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Item</item>
+    </string-array>
+
+    <string-array name="key">
+        <item>Try to open Gate?</item>
+        <item>Yes</item>
+        <item>No</item>
+        <item>rest</item>
+        <item>first_scene</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="rest">
+        <item>Gate 1</item>
+        <item>Use key?</item>
+        <item>Return</item>
+        <item>won</item>
+        <item>first_scene</item>
+        <item>1</item>
+        <item>1</item>
+        <item>fourth_4</item>
+        <item>Restricted</item>
+    </string-array>
+
+    <string-array name="won">
+        <item>You won</item>
+        <item>Return</item>
+        <item>first_scene</item>
         <item>1</item>
         <item>1</item>
         <item>Dialog</item>
