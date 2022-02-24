@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String[] text,defText;
     //Choice is the String [] that is to be loaded
     //Check denotes the type of the String []
-    String choice,check;
+    String choice,check,ending;
     Drawable image;
     ConstraintLayout popOutLayout;
     CountDownTimer timer;
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //Where the image data is in the String []
     int imageNum;
     //Delay of text
-    int delay=1;
+    int delay;
     int delayMult = 10; //25 is a good speed
     // Last item of the String []
     int lastItem;
@@ -59,13 +59,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //Indicates which button is pressed
     int buttonState;
+    //Indicates which ending was activated
+    boolean witchEnd,knightEnd,dragonEnd,priestEnd;
     //Number of choices a Scenario will offer
     int numOfChoice;
     //Which item was picked //TODO: could be made better for a more dynamic approach
     int itemState;
-    int item,restricted;
+    int item;
 
-    boolean failed,timerRunning;
+    boolean failed,timerRunning,restricted;
     //Text Delay
     boolean allowDelay = false;
 
@@ -141,8 +143,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //Runs if no choices has been made
             arrayCheck();
             textChange();
-        } else if (restricted == 1) {
-            restricted--;
+        } else if (restricted) {
+            restricted = false;
             restricted();
         } else {
             arrayCheck();
@@ -154,13 +156,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     textChange();
                     break;
                 case "Restricted":
-                    restricted = 1;
+                    restricted = true;
                     textLength -=1; //Done as the Restricted Array has 1 more item than the rest
                     textChange();
                     break;
                 case "Item":
                     item = 2;
                     textChange();
+                    break;
+                case "Ending":
+                    ending = choice;
+                    Log.d(TAG, "ending: " + ending);
+                    textChange();
+                    ending();
                     break;
             }
         }
@@ -230,8 +238,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             arrayCheck();
             textChange();
         } else if (buttonState == 2) {
-            restricted = 0;
             textChange();
+        }
+    }
+
+    public void ending() {
+        //Checks which ending was activated
+        switch (ending) {
+            case "b2a2b2":
+                witchEnd = true;
+                break;
+            case "b2b2a2":
+                knightEnd = true;
+                break;
+            case "c2c2b2":
+                dragonEnd = true;
+                break;
+            case "c2d2a2":
+                priestEnd = true;
+                break;
         }
     }
 

@@ -255,6 +255,18 @@
         <item>Dialog</item>
     </string-array>
 
+    <string-array name="gameOver">
+        <item>
+            <![CDATA[
+            You were trying to cross the border, right? Walked right into that Imperial ambush, same as us, and that thief over there. Damn you Stormcloaks. Skyrim was fine until you came along. Empire was nice and lazy. If they hadn\'t been looking for you, I could\'ve stolen that horse and be halfway to Hammerfell.
+            ]]>
+        </item>
+        <item>> Return to Start</item>
+        <item>a1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
 
     ////////////////////////////////////////////////////////////START GAME////////////////////////////////////////////////////////////
 
@@ -310,12 +322,11 @@
     <string-array name="a4">
         <item>
             <![CDATA[
-            <p><em>"You are tired and confused so I will keep this simple. I am a Guardian, sworn to protect this sacred forest."</em><br>
+            <em>"You are tired and confused so I will keep this simple. I am a Guardian, sworn to protect this sacred forest."</em><br>
             <br>
             The woman introduces herself as she pulls you towards an intersection in the distance.<br>
             <br>
-            <em>"Not too long ago this forest has been consumed by an evil curse. You are one of its dwellers; this forest is your home"</em><br>
-            </p>
+            <em>"Not too long ago this forest has been consumed by an evil curse. You are one of its dwellers; this forest is your home"</em>
             ]]>
         </item>
         <item>> Continue</item>
@@ -343,7 +354,7 @@
         <item>e1</item>
         <item>1</item>
         <item>1</item>
-        <item>Dialog</item>
+        <item>Item</item>
     </string-array>
 
     ////////////////////////////////////////////////////////////SWORD PATH////////////////////////////////////////////////////////////
@@ -379,7 +390,7 @@
             Without dwelling on it, you head towards…
             ]]>
         </item>
-        <item>> The Witch of the Northh</item>
+        <item>> The Witch of the North</item>
         <item>>  Knight of the East</item>
         <item>> The Dragon of the West</item>
         <item>> The Priest of the South</item>
@@ -398,7 +409,7 @@
             You arrive at the north of the forest, where a curse lays. Beyond rests the ruins of a small village, nestled deep within the thick trees. At the edge is the remains of what seemed to be a church.<br>
             <br>
             You enter its dusty doors, and across the large hall sits a witch on her wicked throne.<br>
-            You approach slowly, and she stands and looks down on you.<br>
+            You approach slowly, and she stands and looks down on you.
             ]]>
         </item>
         <item>> Continue</item>
@@ -429,7 +440,7 @@
             <![CDATA[
             You arrive at the west of the forest, where a curse lays. The area is warm and mountainous, where snow and ice are found, instead you find fire and lava popping from the ground.<br>
             <br>
-            You hear a booming roar, and in the distance, a colossal figure rises from the horizon. Its head then moves towards your direction, and it begins to fly.<br>
+            You hear a booming roar, and in the distance, a colossal figure rises from the horizon. Its head then moves towards your direction, and it begins to fly.
             ]]>
         </item>
         <item>> Continue</item>
@@ -444,7 +455,7 @@
             <![CDATA[
             You arrive at the south of the forest, where a curse lays. Before you is a wet and damp swamp, with the effects of the curse changing the color of the water to an eerie purple.<br>
             <br>
-            In front of you is an enclosure, where a beast-man priest with a lion\'s head stands in the middle. His eyes are pale, and lifeless. He notices your presence, and braces himself.<br>
+            In front of you is an enclosure, where a beast-man priest with a lion\'s head stands in the middle. His eyes are pale, and lifeless. He notices your presence, and braces himself.
             ]]>
         </item>
         <item>> Continue</item>
@@ -515,7 +526,7 @@
             ]]>
         </item>
         <item>> Continue</item>
-        <item>b2a1b2</item>
+        <item>b2a2b2</item>
         <item>1</item>
         <item>1</item>
         <item>Dialog</item>
@@ -527,7 +538,7 @@
            <em>"How ignorant, you are inside the church of the sacred forest. Pay your respects."</em>
             ]]>
         </item>
-        <item>> Continue</item>
+        <item>> Return</item>
         <item>b2a2</item>
         <item>1</item>
         <item>1</item>
@@ -540,7 +551,7 @@
            <em>"I follow only the will of the…forest?…but I…no! I must not falter."</em>
             ]]>
         </item>
-        <item>> Continue</item>
+        <item>> Return</item>
         <item>b2a2</item>
         <item>1</item>
         <item>1</item>
@@ -561,13 +572,13 @@
             Though you feel something is amiss, all is well.<br>
             <br>
             <strong>-E N D-</strong>
-            ]]>R
+            ]]>
         </item>
         <item>> Return to Start</item>
         <item>a1</item>
         <item>1</item>
         <item>1</item>
-        <item>Dialog</item>
+        <item>Ending</item>
     </string-array>
 
     //////////////////B2B1//////////////////
@@ -577,7 +588,7 @@
             <![CDATA[
             You inch closer, and as you arrive you see a man with long white hair curled up on his knees, with two swords stabbed on the ground beside him. You can hear him giggling slightly.<br>
             <br>
-            <em>"Heehee...heeeheeee...there isss an intruder today....how about we go and...play?"<br>
+            <em>"Heehee…heeeheeee…there isss an intruder today....how about we go and...play?"<br>
             </em><br>
             In an instant, he grabs his two swords and lunges towards you. Fortunately you manage to block, and behind his unkempt hair you see his maniacal, bloodshot eyes.<br>
             <br>
@@ -602,7 +613,7 @@
             <![CDATA[
             You steel yourself and push him away.<br>
             <br>
-            <em>"HAHAHAHA!! THAT'S RIGHT!! LET'S PLAY UNTIL WE DROP!!!"<br>
+            <em>"HAHAHAHA!! THAT\'S RIGHT!! LET\'S PLAY UNTIL WE DROP!!!"<br>
             </em><br>
             You begin exchanging blows, swords clashing against each other, its song echoing across the plains as sparks begin to fly.<br>
             <br>
@@ -625,11 +636,11 @@
             <![CDATA[
            You steel yourself and push him away.<br>
             <br>
-            <em>"HAHAHAHA!! THAT'S RIGHT!! LET'S PLAY UNTIL WE DROP!!!"<br>
+            <em>"HAHAHAHA!! THAT\'S RIGHT!! LET\'S PLAY UNTIL WE DROP!!!"<br>
             </em><br>
             He begins to slash away at you, but you manage to be patient and block his relentless attacks. The maniac grows restless, as with every block and parry his attacks grow faster.<br>
             <br>
-            <em>"WHY...ARENT...YOU...FIGHTING?!!"<br>
+            <em>"WHY…ARENT…YOU…FIGHTING?!!"<br>
             </em><br>
             He screams. You keep blocking and playing defense, you are yet to find an opening, and attacks are getting faster with every second. But eventually, he pauses and backs off for a breath.<br>
             <br>
@@ -651,7 +662,7 @@
            <em>"HAHAHAHAHAHAHAHAHAHAHAHA"</em>
             ]]>
         </item>
-        <item>> Continue</item>
+        <item>> Return</item>
         <item>b2b2</item>
         <item>1</item>
         <item>1</item>
@@ -664,7 +675,7 @@
            <em>"HAHAHAHAHAHAHAHAHAHAHAHA"</em>
             ]]>
         </item>
-        <item>> Continue</item>
+        <item>> Return</item>
         <item>b2b2</item>
         <item>1</item>
         <item>1</item>
@@ -674,7 +685,7 @@
     <string-array name="b2b2a2">
         <item>
             <![CDATA[
-           <em>"Heh...heheheh...that was fun... I hope we get to play again." <br>
+           <em>"Heh…heheheh…that was fun… I hope we get to play again." <br>
             </em><br>
             He mutters as you remove your sword from his chest. The maniac drops his swords and fall to the ground.<br>
             <br>
@@ -689,10 +700,704 @@
         <item>a1</item>
         <item>1</item>
         <item>1</item>
+        <item>Ending</item>
+    </string-array>
+
+    //////////////////B2C1//////////////////
+
+    <string-array name="b2c2">
+        <item>
+            <![CDATA[
+            In no time, the dragon lands in front of you. Its shadow covering you and the mountains behind. It looks down at you with its glowing, fiery eyes.<br>
+            <br>
+            <em>"YOU REEK OF A STENCH I AM NOT FOND OF, INTRUDER. LEAVE OR PERISH."</em><br>
+            <br>
+            It\'s booming voice rings in your ear. Its scales begin to glow, and y ou sense it will begin to attack you soon.
+            ]]>
+        </item>
+        <item>> Attack first [Attack]</item>
+        <item>> Stand on Guard [Defend]</item>
+        <item>> "Are you the one causing this fire?"</item>
+        <item>> "Hide behind a rock"</item>
+        <item>b2c2a1</item>
+        <item>b2c2b1</item>
+        <item>b2c2c1</item>
+        <item>b2c2d1</item>
+        <item>1</item>
+        <item>1</item>
         <item>Dialog</item>
     </string-array>
 
+    <string-array name="b2c2a1">
+        <item>
+           <![CDATA[
+            The dragon opens it mouth. You know for a fact that a dragon\'s scale cannot be penetrated easily, and so you jump towards the inside of its mouth and hack away at its tongue.<br>
+            <br>
+            But the moment you enter, the dragon stops at its tracks and laughs.<br>
+            <br>
+            <em>"HAHAHA! YOU ARE MORE FOOLISH THAN I THOUGHT."<br>
+            </em><br>
+            And at that moment, the dragon breaths
+            ]]>
+        </item>
+        <item>> GAME OVER</item>
+        <item>gameOver</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
 
+    <string-array name="b2c2b1">
+        <item>
+            <![CDATA[
+            You ready your sword as the dragon opens its mouth. You would think that the sword would be able to cut a dragon\'s breath in half.<br>
+            <br>
+            But unfortunately, reality isn\'t always in your favor, as a dragon\'s breath is too wide to cut in half for your size.
+            ]]>
+        </item>
+        <item>> GAME OVER</item>
+        <item>gameOver</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
 
+    <string-array name="b2c2c1">
+        <item>
+            <![CDATA[
+            <em>"FOOL. I AM THE KING OF THESE SNOWY PEAKS. I BREATH TO EXTINGUISH THESE FLAMES…BUT WHY DO THE FLAMES GROW STRONGER?"</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>b2c2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2c2d1">
+        <item>
+            <![CDATA[
+           You attempt to hide behind a big rock nearby, but the dragon notices this and blasts it to smithereens.<br>
+            <br>
+            <em>"YOU CANNOT HIDE FROM ME, INTRUDER."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>b2c2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    //////////////////B2D1//////////////////
+
+    <string-array name="b2d2">
+        <item>
+            <![CDATA[
+            <em>"An intruder! Please leave me alone, I didn\'t mean to harm!"<br>
+            </em><br>
+            The beast-man exclaims. Despite his pleas for mercy, you know he is still a curse. He grips his staff tightly, waiting for you to make a move.
+            ]]>
+        </item>
+        <item>> Lunge in for the attack [Attack]</item>
+        <item>> Stand on guard [Defend]</item>
+        <item>> "You are a beast-man, why are you afraid?"</item>
+        <item>> "You must pay for your crimes"</item>
+        <item>b2d2a1</item>
+        <item>b2d2b1</item>
+        <item>b2d2c1</item>
+        <item>b2d2d1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2d2a1">
+        <item>
+            <![CDATA[
+            Throwing away your doubts, you lunge in towards the priest. He yelps, and begins to throws out a barrage of spells at you.<br>
+            <br>
+            While moving towards him, you hack away at the never ending projectiles coming from his staff. But your efforts are in vain as your arms begin to give out, and you are slowly swallowed by his magic.
+            ]]>
+        </item>
+        <item>> GAME OVER</item>
+        <item>gameOver</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2d2b1">
+        <item>
+            <![CDATA[
+            Listening to his cries, you lower your sword and attempt to approach him. But unfortunately, this made him even more paranoid, as you look very intimidating while holding a weapon.<br>
+            <br>
+            Raising his staff, he shoots a fast laser spell aimed towards your forehead before you could do anything, and all turned dark.
+            ]]>
+        </item>
+        <item>> GAME OVER</item>
+        <item>gameOver</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2d2c1">
+        <item>
+            <![CDATA[
+            <em>"I wish to live, intruder. Pride means nothing in the face of death"</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>b2d2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2d2d1">
+        <item>
+            <![CDATA[
+            <em>"I didn\'t mean to hurt anyone! I wasn\'t..ngh.....I...no.."<br>
+            </em><br>
+            The priest shakes his head. He seems to be hurting.<br>
+            <br>
+            <em>"I am a priest, why do I hurt?"</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>b2d2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    ////////////////////////////////////////////////////////////SHIELD PATH////////////////////////////////////////////////////////////
+
+    <string-array name="c1">
+        <item>
+            <![CDATA[
+            You pick up the shield.<br>
+            <br>
+            <em>"This shield will defend you from the strongest of spells, but will not provide you with a strong offense" </em><br>
+            <br>
+            <em>"Are you sure you will use this?"</em>
+            ]]>
+        </item>
+        <item>> Yes</item>
+        <item>> No</item>
+        <item>c2</item>
+        <item>a5</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2">
+        <item>
+            <![CDATA[
+            <em>"Very well, I wish you the best of luck on your journey. The fate of this forest rests in your hands."<br>
+            </em><br>
+            You feel the shield\'s magic flow through your body. You are healed and your senses have come back to normal.<br>
+            <br>
+            You feel as if there something amiss with the Guardian, likely because of the curse.<br>
+            <br>
+            Without dwelling on it, you head towards…
+            ]]>
+        </item>
+        <item>> The Witch of the North</item>
+        <item>> Knight of the East</item>
+        <item>> The Dragon of the West</item>
+        <item>> The Priest of the South</item>
+        <item>c2a1</item>
+        <item>c2b1</item>
+        <item>c2c1</item>
+        <item>c2d1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2a1">
+        <item>
+            <![CDATA[
+            You arrive at the north of the forest, where a curse lays. Beyond rests the ruins of a small village, nestled deep within the thick trees. At the edge is the remains of what seemed to be a church.<br>
+            <br>
+            You enter its dusty doors, and across the large hall sits a witch on her wicked throne.<br>
+            You approach slowly, and she stands and looks down on you.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>c2a2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2b1">
+        <item>
+            <![CDATA[
+            You arrive at the east of the forest, where a curse lays. As you enter you are met with a vast plain of flowers. Though the sight is beautiful, you know that the pale white color of the petals is a sign that the flower has been removed of its life force<br>
+            <br>
+            In the distance, you see a figure huddled underneath a tree in the middle of the area.<br>
+            It seems to be…laughing?
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>c2b2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2c1">
+        <item>
+            <![CDATA[
+            You arrive at the west of the forest, where a curse lays. The area is warm and mountainous, where snow and ice are found, instead you find fire and lava popping from the ground.<br>
+            <br>
+            You hear a booming roar, and in the distance, a colossal figure rises from the horizon. Its head then moves towards your direction, and it begins to fly.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>c2c2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2d1">
+        <item>
+            <![CDATA[
+            You arrive at the south of the forest, where a curse lays. Before you is a wet and damp swamp, with the effects of the curse changing the color of the water to an eerie purple.<br>
+            <br>
+            In front of you is an enclosure, where a beast-man priest with a lion\'s head stands in the middle. His eyes are pale, and lifeless. He notices your presence, and braces himself.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>c2d2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    //////////////////C2A1//////////////////
+
+    <string-array name="c2a2">
+        <item>
+            <![CDATA[
+            <em>"Intruder, it is safe to assume you are here to kill me?"</em><br>
+            <br>
+            She raises her hand, and spears of light appear behind her. Her eyes glow as she readies the spell, but they do not hide the clear sorrow and regret inside.<br>
+            <em><br>
+            "Do what you must, but know that this is not by my will." </em>
+            ]]>
+        </item>
+        <item>> Raise your shield and dash [Attack]</item>
+        <item>> Raise your shield and block [Defend]</item>
+        <item>> "What is this place?"</item>
+        <item>> "Not by your will?"</item>
+        <item>c2a2a1</item>
+        <item>c2a2b1</item>
+        <item>c2a2c1</item>
+        <item>c2a2d1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2a2a1">
+        <item>
+            <![CDATA[
+            She fires the spears at your direction. With steady movement, you block every spear and approach the witch.<br>
+            <br>
+            You get in range, and bash, but she blocks it with a barrier.<br>
+            <br>
+            <em>"Your weapon may be strong, but it is not enough against my magic."</em><br>
+            <br>
+            She locks your shield in the barrier, before long it begins to glow and absorb the barrier\'s magic She notices this and throws it away, leaving you helpless against her attacks. As you draw your final breath and all turns black, you see a small tear being shed for you
+            ]]>
+        </item>
+        <item>> GAME OVER</item>
+        <item>gameOver</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2a2b1">
+        <item>
+            <![CDATA[
+            She fires the spears at your direction. With patient and steady form, you block a spear that was shot at you<br>
+            <br>
+            The witch falters at the sight of the glowing shield<br>
+            <br>
+            <em>"Absorption?…not again!"</em><br>
+            <br>
+            The witch summons more spears, you hold on once more. She fires a spear above you, and you manage to block it, but another spear was fired at your side, hitting you in the arm and removing the shield.<br>
+            <br>
+            <em>"I won\'t lose again."<br>
+            </em><br>
+            With her trembling voice, she summons her remaining spears, and fires.<br>
+            ]]>
+        </item>
+        <item>> GAME OVER</item>
+        <item>gameOver</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2a2c1">
+        <item>
+            <![CDATA[
+           <em>"How ignorant, you are inside the church of the sacred forest. Pay your respects."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>c2a2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2a2d1">
+        <item>
+            <![CDATA[
+           <em>"I follow only the will of the…forest?…but I…no! I must not falter."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>c2a2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    //////////////////C2B1//////////////////
+
+    <string-array name="c2b2">
+        <item>
+            <![CDATA[
+            You inch closer, and as you arrive you see a man with long white hair curled up on his knees, with two swords stabbed on the ground beside him. You can hear him giggling slightly.<br>
+            <br>
+            <em>"Heehee…heeeheeee…there isss an intruder today....how about we go and...play?"<br>
+            </em><br>
+            In an instant, he grabs his two swords and lunges towards you. Fortunately you manage to block, and behind his unkempt hair you see his maniacal, bloodshot eyes.<br>
+            <br>
+            <em>"HAHAHAHA!! A SHIELD?!! COWARD!, LETS SEE IF IT BREAKS!!"</em>
+            ]]>
+        </item>
+        <item>> Fight back and match his energy [Attack]</item>
+        <item>> Block and wait for an opening [Defend]</item>
+        <item>> "Did you break the flowers too?"</item>
+        <item>> "You\'re crazy!"</item>
+        <item>c2b2a1</item>
+        <item>c2b2b1</item>
+        <item>c2b2c1</item>
+        <item>c2b2d1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2b2a1">
+        <item>
+            <![CDATA[
+            You steel yourself and push him away.<br>
+            <br>
+            <em>"HAHAHAHA!! THAT\'S RIGHT!! LET\'S PLAY UNTIL WE DROP!!!"<br>
+            </em><br>
+            You attempt to fight back, exchanging blows and your weapons clashing against each other, but your shield does nothing against him, unlike his swords against you.<br>
+            <br>
+            The maniac is relentless with his offense, and eventually he breaks your guard and deals a fatal blow.<br>
+            <br>
+            As your head falls to the ground, the last thing you hear is a bone-chilling laugh echoing throughout the plains<br>
+
+            ]]>
+        </item>
+        <item>> GAME OVER</item>
+        <item>gameOver</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2b2b1">
+        <item>
+            <![CDATA[
+           You steel yourself and push him away.<br>
+            <br>
+            <em>"HAHAHAHA!! THAT\'S RIGHT!! LET\'S PLAY UNTIL WE DROP!!!"<br>
+            </em><br>
+            He begins to slash away at you, but you manage to be patient and block his relentless attacks. The maniac grows restless, as with every block his attacks grow faster.<br>
+            <br>
+            <em>"COWARD!!! FIGHT!!!!"<br>
+            </em><br>
+            He screams. You keep blocking and playing defense, you are yet to find an opening, and attacks are getting faster with every second. But eventually, he pauses and backs off for a breath.<br>
+            <br>
+            You go in for the kill, but you can only do so much with a shield. The maniac parries your attack with one sword and stabs you with the other <br>
+            <br>
+            You look up towards the maniac, and the last thing you saw was his smile and your reflection in his eyes. <br>
+            ]]>
+        </item>
+        <item>> GAME OVER</item>
+        <item>gameOver</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2b2c1">
+        <item>
+            <![CDATA[
+           <em>"HAHAHAHAHAHAHAHAHAHAHAHA"</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>c2b2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2b2d1">
+        <item>
+            <![CDATA[
+           <em>"HAHAHAHAHAHAHAHAHAHAHAHA"</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>c2b2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    //////////////////C2C1//////////////////
+
+    <string-array name="c2c2">
+        <item>
+            <![CDATA[
+            In no time, the dragon lands in front of you. Its shadow covering you and the mountains behind. It looks down at you with its glowing, fiery eyes.<br>
+            <br>
+            <em>"YOU REEK OF A STENCH I AM NOT FOND OF, INTRUDER. LEAVE OR PERISH."</em><br>
+            <br>
+            It\'s booming voice rings in your ear. Its scales begin to glow, and y ou sense it will begin to attack you soon.
+            ]]>
+        </item>
+        <item>> Attack first [Attack]</item>
+        <item>> Stand on Guard [Defend]</item>
+        <item>> "Are you the one causing this fire?"</item>
+        <item>> "Hide behind a rock"</item>
+        <item>c2c2a1</item>
+        <item>c2c2b1</item>
+        <item>c2c2c1</item>
+        <item>c2c2d1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2c2a1">
+        <item>
+           <![CDATA[
+            The dragon opens it mouth. You know for a fact that a dragon can choke on its own breath, and so you jump towards the inside of its mouth in attempt to block the breath from leaving the mouth.<br>
+            <br>
+            But the moment you enter, the dragon stops at its tracks and laughs.<br>
+            <br>
+            <em>"HAHAHA! YOU ARE MORE FOOLISH THAN I THOUGHT."<br>
+            </em><br>
+            And at that moment, the dragon closes its mouth.<br>
+            ]]>
+        </item>
+        <item>> GAME OVER</item>
+        <item>gameOver</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2c2b1">
+        <item>
+            <![CDATA[
+            You ready your shield as the dragon opens its mouth. The ground rumbles in response to it charging its breath.<br>
+            <br>
+            The moment its head lunges, you raise your shield and block the breath. It is scorching, but nevertheless you persevere and hold on.<br>
+            <br>
+            This goes on for a while, as the dragon\'s supply of breath seems endless. But your patience is rewarded as the dragon\'s breath weakens and stops.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>c2c2b2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2c2c1">
+        <item>
+            <![CDATA[
+            <em>"FOOL. I AM THE KING OF THESE SNOWY PEAKS. I BREATH TO EXTINGUISH THESE FLAMES…BUT WHY DO THE FLAMES GROW STRONGER?"</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>c2c2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2c2d1">
+        <item>
+            <![CDATA[
+           You attempt to hide behind a big rock nearby, but the dragon notices this and blasts it to smithereens.<br>
+            <br>
+            <em>"YOU CANNOT HIDE FROM ME, INTRUDER."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>c2c2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2c2b2">
+        <item>
+            <![CDATA[
+           The dragon pants and takes a breath<br>
+            <br>
+            <em>"FOUL CREATURE. I WILL CRUSH YOU."<br>
+            </em><br>
+            It raises its claw high in the air. In this moment, you take the opportunity to aim your shield towards the dragon\'s head, and release the absorbed magic.<br>
+            <br>
+            The magic hits its head, and the dragon falls to the earth. In its final breath, it said<br>
+            <br>
+            <em>"Your scent…is just like mine…"<br>
+            </em><br>
+            You have defeated a curse, allowing the Guardian to eliminate the other curses, reclaiming the sacred forest.<br>
+            <br>
+            Though you feel something is amiss, all is well.<br>
+            <br>
+            <strong>-E N D-</strong>
+            ]]>
+        </item>
+        <item>> Return to Start</item>
+        <item>a1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Ending</item>
+    </string-array>
+
+    //////////////////C2D1//////////////////
+
+    <string-array name="c2d2">
+        <item>
+            <![CDATA[
+            <em>"An intruder! Please leave me alone, I didn\'t mean to harm!"<br>
+            </em><br>
+            The beast-man exclaims. Despite his pleas for mercy, you know he is still a curse. He grips his staff tightly, waiting for you to make a move.
+            ]]>
+        </item>
+        <item>> Go for his staff [Attack]</item>
+        <item>> Stand on guard [Defend]</item>
+        <item>> "You are a beast-man, why are you afraid?"</item>
+        <item>> "You must pay for your crimes"</item>
+        <item>c2d2a1</item>
+        <item>c2d2b1</item>
+        <item>c2d2c1</item>
+        <item>c2d2d1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2d2a1">
+        <item>
+            <![CDATA[
+            Throwing away your doubts, you lunge in towards the priest. He yelps, and begins to throws out a barrage of spells at you.<br>
+            <br>
+            While inching closer, you move your shield in his direction, blocking and absorbing all the projectiles from his staff. This causes the shield to glow and burn brightly<br>
+            <br>
+            <em>"No…no! Stay away! Get back!"<br>
+            </em><br>
+            As you enter point blank range, the projectiles stop. In that moment you grab his staff and throw it away. The priest stumbles and attempts to run away, but you intercept him by releasing the absorbed magic in your shield.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>c2d2a2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2d2b1">
+        <item>
+            <![CDATA[
+            Listening to his cries, you lower your shield and attempt to approach him. But unfortunately, this made him even more paranoid, as you look very intimidating while holding a weapon.<br>
+            <br>
+            Raising his staff, he shoots a fast laser spell aimed towards your forehead before you could do anything, and all turned dark.<br>
+            ]]>
+        </item>
+        <item>> GAME OVER</item>
+        <item>gameOver</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2d2c1">
+        <item>
+            <![CDATA[
+            <em>"I wish to live, intruder. Pride means nothing in the face of death"</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>c2d2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2d2d1">
+        <item>
+            <![CDATA[
+            <em>"I didn\'t mean to hurt anyone! I wasn\'t..ngh.....I...no.."<br>
+            </em><br>
+            The priest shakes his head. He seems to be hurting.<br>
+            <br>
+            <em>"I am a priest, why do I hurt?"</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>c2d2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2d2a2">
+        <item>
+            <![CDATA[
+            The projectile hits the priest and he falls to the ground. He turns and looks at you, pleading one final mercy.<br>
+            <br>
+            <em>"Please....kill...me..."<br>
+            </em><br>
+            Your shield burns bright as magic shoots out from its center.<br>
+            <br>
+            You have defeated a curse, allowing the Guardian to eliminate the other curses, reclaiming the sacred forest.<br>
+            <br>
+            Though you feel something is amiss, all is well.<br>
+            <br>
+            <strong>-E N D-</strong>
+            ]]>
+        </item>
+        <item>> Return to Start</item>
+        <item>a1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Ending</item>
+    </string-array>
 
 </resources>
