@@ -42,6 +42,8 @@
             android:id="@+id/txtBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="10sp"
+            android:paddingLeft="10sp"
             android:gravity="center"
             android:text="@string/default_txtView"
             android:textSize="15sp"

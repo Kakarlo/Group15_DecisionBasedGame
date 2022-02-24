@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     boolean failed,timerRunning;
     //Text Delay
-    boolean allowDelay = true;
+    boolean allowDelay = false;
 
     //////////////////////test///////////////////////
 
