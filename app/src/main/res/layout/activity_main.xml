@@ -9,26 +9,34 @@
 
     <ImageView
         android:id="@+id/backView"
+        android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/background2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/textBox"
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_margin="19dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="19dp">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backView"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/txtBox"
@@ -47,10 +55,10 @@
         android:id="@+id/imageView"
         android:layout_width="305dp"
         android:layout_height="280dp"
+        android:visibility="gone"
         android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toTopOf="@+id/choices"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textBox"
         app:srcCompat="@drawable/umaru1"
@@ -60,11 +68,12 @@
         android:id="@+id/choices"
         android:layout_width="411dp"
         android:layout_height="289dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/backView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/textBox"
+        app:layout_constraintVertical_bias="1.0">
 
         <Button
             android:id="@+id/button"
@@ -122,17 +131,11 @@
         android:id="@+id/popOutLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/popOut"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/white"

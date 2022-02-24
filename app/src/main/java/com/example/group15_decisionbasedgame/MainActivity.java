@@ -1,14 +1,16 @@
-package com.example.decision_based_game_test;
+package com.example.group15_decisionbasedgame;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.core.text.HtmlCompat;
 
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String choice,check;
     Drawable image;
     ConstraintLayout popOutLayout;
+    CountDownTimer timer;
 
     //Array ID (integer)
     int arrID;
@@ -43,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int imageState;
     //Where the image data is in the String []
     int imageNum;
+    //Delay of text
+    int delay=1;
+    int delayMult = 10; //25 is a good speed
     // Last item of the String []
     int lastItem;
     //length of the String []
@@ -59,25 +65,67 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int itemState;
     int item,restricted;
 
-    boolean failed;
+    boolean failed,timerRunning;
+    //Text Delay
+    boolean allowDelay = true;
 
     //////////////////////test///////////////////////
 
     //So when i pick a choice, the button will then get the corresponding string name array to set the dialog for the next scenario?
+
+    public void startStop() {
+        if (timerRunning && allowDelay) {
+            stopTimer();
+        } else if (allowDelay) {
+            startTimer();
+        }
+    }
+
+    public void startTimer() {
+        timer = new CountDownTimer(delay+1500, delay+1500) {
+            public void onTick(long l) {
+                Log.d(TAG, "onTick: tick" + delay + l);
+            }
+
+            public void onFinish() {
+                popOutLayout.setVisibility(View.INVISIBLE);
+                popOutLayout.setClickable(false);
+                startStop();
+                Log.d(TAG, "onFinish:" + delay);
+            }
+        };
+        timer.start();
+        timerRunning = true;
+        popOutLayout.setVisibility(View.VISIBLE);
+        popOutLayout.setClickable(true);
+    }
+
+    public void stopTimer () {
+        timer.cancel();
+        timerRunning = false;
+    }
 
     public void arrayCheck() {
         //checks if the scenario is now restricted
         if (buttonState != 0 && !failed) {
             choice = text[numOfChoice + buttonState];
             arrID = getResources().getIdentifier(choice, "array", getPackageName());
-            text = getResources().getStringArray(arrID);
+            try {
+                text = getResources().getStringArray(arrID);
+            } catch (Exception e) {
+                text = getResources().getStringArray(R.array.errorMessage);
+            }
             textLength = text.length;
             Log.d(TAG, "//////////////1: " + choice + " //////////////2");
         } else if (failed) {
             choice = text[lastItem - 1];
             Log.d(TAG, "////////////////////////////restricted: " +choice);
             arrID = getResources().getIdentifier(choice, "array", getPackageName());
-            text = getResources().getStringArray(arrID);
+            try {
+                text = getResources().getStringArray(arrID);
+            } catch (Exception e) {
+                text = getResources().getStringArray(R.array.errorMessage);
+            }
             textLength = text.length;
             failed = false;
         } else {
@@ -120,14 +168,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void textChange() {
         Log.d(TAG, "textChange: " +choice +"  "+restricted);
+        //Checks if delay is to be applied
+        if (allowDelay) {
+            delay = text[0].length() * delayMult;
+            Log.d(TAG, "textChange: " + delay);
+        }
         //Checks how many choices in that particular scene are
         if (textLength == choice4){ //for 4 choices scenario
             choices4();
             imageChange();
+            startStop();
             numOfChoice = 4;
         } else if (textLength == choice3) { //for 3 choice scenario
             choices3();
             imageChange();
+            startStop();
             numOfChoice = 3;
         } else if (textLength == choice2) { // for 2 choice scenario
             choices2();
@@ -136,6 +191,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (textLength == choice1) { // for 1 choice scenario
             choices1();
             imageChange();
+            startStop();
             numOfChoice = 1;
         }
         //Checks the item state
@@ -159,20 +215,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     failed = false;
                 } else {
                     popOut.setText("You didn't grab the wrong item, didn't you?");
+                    popOut.setVisibility(View.VISIBLE);
                     popOut();
                     Log.d(TAG, "You didn't grab the wrong item, didn't you?" +choice);
                     failed = true;
                 }
-                arrayCheck();
-                textChange();
             } else {
                 popOut.setText("Ho ho, feeling lucky ey");
+                popOut.setVisibility(View.VISIBLE);
                 popOut();
                 Log.d(TAG, "Ho ho, feeling lucky ey");
                 failed = true;
-                arrayCheck();
-                textChange();
             }
+            arrayCheck();
+            textChange();
         } else if (buttonState == 2) {
             restricted = 0;
             textChange();
@@ -186,18 +242,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fadeInOut.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-
             }
-
             @Override
             public void onAnimationEnd(Animation animation) {
+                popOut.setVisibility(View.GONE);
                 popOutLayout.setVisibility(View.GONE);
                 popOutLayout.setClickable(false);
             }
-
             @Override
             public void onAnimationRepeat(Animation animation) {
-
             }
         });
     }
@@ -208,23 +261,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button2.setVisibility(View.VISIBLE);
         button3.setVisibility(View.VISIBLE);
         button4.setVisibility(View.VISIBLE);
-        //Sets the buttons functionality
-        button.setEnabled(true);
-        button2.setEnabled(true);
-        button3.setEnabled(true);
-        button4.setEnabled(true);
         //Sets the text
-        textBox.setText(text[0]);
+        textBox.setText(HtmlCompat.fromHtml(text[0],HtmlCompat.FROM_HTML_MODE_COMPACT));
         button.setText(text[1]);
         button2.setText(text[2]);
         button3.setText(text[3]);
         button4.setText(text[4]);
+        //Animation delay
+        fadelate.setStartOffset(delay+300);
+        fadelate2.setStartOffset(delay+600);
+        fadelate3.setStartOffset(delay+900);
+        fadelate4.setStartOffset(delay+1200);
         //Starts Animation
-//        textBox.startAnimation(fade);
-//        button.startAnimation(fadelate);
-//        button2.startAnimation(fadelate2);
-//        button3.startAnimation(fadelate3);
-//        button4.startAnimation(fadelate4);
+        textBox.startAnimation(fade);
+        button.startAnimation(fadelate);
+        button2.startAnimation(fadelate2);
+        button3.startAnimation(fadelate3);
+        button4.startAnimation(fadelate4);
         //Sets the imageNumber
         imageNum = 9;
     }
@@ -234,20 +287,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button.setVisibility(View.VISIBLE);
         button2.setVisibility(View.VISIBLE);
         button3.setVisibility(View.VISIBLE);
-        //Sets the buttons functionality
-        button.setEnabled(true);
-        button2.setEnabled(true);
-        button3.setEnabled(true);
         //Sets the text
-        textBox.setText(text[0]);
+        textBox.setText(HtmlCompat.fromHtml(text[0],HtmlCompat.FROM_HTML_MODE_COMPACT));
         button.setText(text[1]);
         button2.setText(text[2]);
         button3.setText(text[3]);
+        //Animation delay
+        fadelate.setStartOffset(delay+300);
+        fadelate2.setStartOffset(delay+600);
+        fadelate3.setStartOffset(delay+900);
         //Starts Animation
-//        textBox.startAnimation(fade);
-//        button.startAnimation(fadelate);
-//        button2.startAnimation(fadelate2);
-//        button3.startAnimation(fadelate3);
+        textBox.startAnimation(fade);
+        button.startAnimation(fadelate);
+        button2.startAnimation(fadelate2);
+        button3.startAnimation(fadelate3);
         //Sets the imageNumber
         imageNum = 7;
     }
@@ -256,17 +309,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Changes button visibility
         button.setVisibility(View.VISIBLE);
         button2.setVisibility(View.VISIBLE);
-        //Sets the buttons functionality
-        button.setEnabled(true);
-        button2.setEnabled(true);
         //Sets the text and starts the animation
-        textBox.setText(text[0]);
+        textBox.setText(HtmlCompat.fromHtml(text[0],HtmlCompat.FROM_HTML_MODE_COMPACT));
         button.setText(text[1]);
         button2.setText(text[2]);
+        //Animation delay
+        fadelate.setStartOffset(delay+300);
+        fadelate2.setStartOffset(delay+600);
         //Starts Animation
-//        textBox.startAnimation(fade);
-//        button.startAnimation(fadelate);
-//        button2.startAnimation(fadelate2);
+        textBox.startAnimation(fade);
+        button.startAnimation(fadelate);
+        button2.startAnimation(fadelate2);
         //Sets the imageNumber
         imageNum = 5;
     }
@@ -274,14 +327,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void choices1() {
         //Changes button visibility
         button.setVisibility(View.VISIBLE);
-        //Sets the buttons functionality
-        button.setEnabled(true);
         //Sets the text and starts the animation
-        textBox.setText(text[0]);
+        textBox.setText(HtmlCompat.fromHtml(text[0],HtmlCompat.FROM_HTML_MODE_COMPACT));
         button.setText(text[1]);
+        //Animation delay
+        fadelate.setStartOffset(delay+300);
         //Starts Animation
-        //textBox.startAnimation(fade);
-        //button.startAnimation(fadelate);
+        textBox.startAnimation(fade);
+        button.startAnimation(fadelate);
         //Sets the imageNumber
         imageNum = 3;
     }
@@ -292,11 +345,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button2.setVisibility(View.INVISIBLE);
         button3.setVisibility(View.INVISIBLE);
         button4.setVisibility(View.INVISIBLE);
-        //Sets the buttons functionality
-        button.setEnabled(false);
-        button2.setEnabled(false);
-        button3.setEnabled(false);
-        button4.setEnabled(false);
     }
 
     public void imageChange() {
@@ -349,16 +397,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //Animation call
         fade = AnimationUtils.loadAnimation(this,R.anim.fade);
-        fade.setStartOffset(300);
         fadelate = AnimationUtils.loadAnimation(this, R.anim.fade_late);
-        fadelate.setStartOffset(300);
         fadelate2 = AnimationUtils.loadAnimation(this, R.anim.fade_late);
-        fadelate2.setStartOffset(600);
         fadelate3 = AnimationUtils.loadAnimation(this, R.anim.fade_late);
-        fadelate3.setStartOffset(900);
         fadelate4 = AnimationUtils.loadAnimation(this, R.anim.fade_late);
-        fadelate4.setStartOffset(1200);
         fadeInOut = AnimationUtils.loadAnimation(this, R.anim.fade_in_out);
+
+        //Animation delay
+        fade.setStartOffset(300);
 
         //Layout call
         popOutLayout = findViewById(R.id.popOutLayout);
@@ -366,7 +412,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //String [] call
         defText = getResources().getStringArray(R.array.default_text);
         //Sets the default text
-        text = getResources().getStringArray(R.array.fourth_4);
+        text = getResources().getStringArray(R.array.a1);
 
         //Sets the choice number
         choice4 = defText.length;
@@ -374,6 +420,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         choice2 = choice3 - 2;
         choice1 = choice2 - 2;
 
+        //button
 
         sceneCheck();
     }

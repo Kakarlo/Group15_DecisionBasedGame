@@ -119,7 +119,7 @@
 
     <string-array name="first_scene">
         <item>Mc: Looks like biology class is about to start.\n
-        Teacher: Good Morning class, for today the topic would be the Animal and Plant</item>
+            Teacher: Good Morning class, for today the topic would be the Animal and Plant</item>
         <item>Next</item>
         <item>second_scene</item>
         <item>1</item>
@@ -179,7 +179,7 @@
     </string-array>
 
     <string-array name="fourth_4">
-        <item>Mc: I need to find a place to hide into or atleast be able to survive till help comes</item>
+        <item><![CDATA[ Mc: I <u>need to find a place</u> to hide into or atleast be able to survive till help comes ]]></item>
         <item>Gym</item>
         <item>Locker Room</item>
         <item>Kitchen</item>
@@ -239,5 +239,241 @@
         <item>1</item>
         <item>Dialog</item>
     </string-array>
+
+    ////////////////////////////////////////////////////////////ERROR CATCH////////////////////////////////////////////////////////////
+
+    <string-array name="errorMessage">
+        <item>
+            <![CDATA[
+            Oh no! You\'re not supposed to be here. I supposed you should go back to the start
+            ]]>
+        </item>
+        <item>> Return to Start</item>
+        <item>a1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+
+    ////////////////////////////////////////////////////////////START GAME////////////////////////////////////////////////////////////
+
+    <string-array name="a1">
+        <item>
+            <![CDATA[
+            You wake up, finding yourself in the middle of a forest. The trees are thick and the sky is dark, you feel <br> as if something is wrong.<br>
+            <br>
+            Your body is cramped and you find it hard to move<br>
+            <br>
+            Regardless, you stand up, and your eyes are drawn to the path ahead of you.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>a2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="a2">
+        <item>
+            <![CDATA[
+            You walk. The atmosphere around is eerily silent. You start wonder why your head feels so heavy and why you are in a forest.<br>
+            <br>
+            The silence is interrupted by a voice in the distance. It seems to be calling out to you.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>a3</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="a3">
+        <item>
+            <![CDATA[
+            You move towards the voice, and you start to see a figure in the distance.<br>
+            <br>
+            <em>"Oh thank heavens a survivor! Quickly, there is no time to waste! I will explain on the way."</em><br>
+            <br>
+            A young woman dressed in elegant robes appear before you and quickly grabs your arm. With no strength to resist, you are dragged away.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>a4</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="a4">
+        <item>
+            <![CDATA[
+            <p><em>"You are tired and confused so I will keep this simple. I am a Guardian, sworn to protect this sacred forest."</em><br>
+            <br>
+            The woman introduces herself as she pulls you towards an intersection in the distance.<br>
+            <br>
+            <em>"Not too long ago this forest has been consumed by an evil curse. You are one of its dwellers; this forest is your home"</em><br>
+            </p>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>a5</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="a5">
+        <item>
+            <![CDATA[
+            In the wave of her hand, the sword and shield float towards you.<br>
+            <br>
+            <em>"These weapons will help you in your endeavor, and also heal you. Choose one and be on your way."</em>
+            ]]>
+        </item>
+        <item>> Sword</item>
+        <item>> Shield</item>
+        <item>> Sword and Shield</item>
+        <item>> Unarmed</item>
+        <item>b1</item>
+        <item>c1</item>
+        <item>d1</item>
+        <item>e1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    ////////////////////////////////////////////////////////////SWORD PATH////////////////////////////////////////////////////////////
+
+    <string-array name="b1">
+        <item>
+            <![CDATA[
+            You pick up the sword.<br>
+            <br>
+            <em>"This sword will cut through steel and magic, but it will not hold in face of strong spells. Be careful with your defense." </em><br>
+            <br>
+            <em>"Are you sure you will use this?"</em>
+            ]]>
+        </item>
+        <item>> Yes</item>
+        <item>> No</item>
+        <item>b2</item>
+        <item>a5</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2">
+        <item>
+            <![CDATA[
+            <em>"Very well, I wish you the best of luck on your journey. The fate of this forest rests in your hands."<br>
+            </em><br>
+            You feel the sword\'s magic flow through your body. You are healed and your senses have come back to normal.<br>
+            <br>
+            You feel as if there something amiss with the Guardian, likely because of the curse.<br>
+            <br>
+            Without dwelling on it, you head towards…
+            ]]>
+        </item>
+        <item>> The Witch of the Northh</item>
+        <item>>  Knight of the East</item>
+        <item>> The Dragon of the West</item>
+        <item>> The Priest of the South</item>
+        <item>b2a1</item>
+        <item>b2b1</item>
+        <item>b2c1</item>
+        <item>b2d1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2a1">
+        <item>
+            <![CDATA[
+            You arrive at the north of the forest, where a curse lays. Beyond rests the ruins of a small village, nestled deep within the thick trees. At the edge is the remains of what seemed to be a church.<br>
+            <br>
+            You enter its dusty doors, and across the large hall sits a witch on her wicked throne.<br>
+            You approach slowly, and she stands and looks down on you.<br>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>b2a2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2b1">
+        <item>
+            <![CDATA[
+            You arrive at the east of the forest, where a curse lays. As you enter you are met with a vast plain of flowers. Though the sight is beautiful, you know that the pale white color of the petals is a sign that the flower has been removed of its life force<br>
+            <br>
+            In the distance, you see a figure huddled underneath a tree in the middle of the area.<br>
+            It seems to be…laughing?<br>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>b2b2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2c1">
+        <item>
+            <![CDATA[
+            You arrive at the west of the forest, where a curse lays. The area is warm and mountainous, where snow and ice are found, instead you find fire and lava popping from the ground.<br>
+            <br>
+            You hear a booming roar, and in the distance, a colossal figure rises from the horizon. Its head then moves towards your direction, and it begins to fly.<br>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>b2c2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2d1">
+        <item>
+            <![CDATA[
+            You arrive at the south of the forest, where a curse lays. Before you is a wet and damp swamp, with the effects of the curse changing the color of the water to an eerie purple.<br>
+            <br>
+            In front of you is an enclosure, where a beast-man priest with a lion\'s head stands in the middle. His eyes are pale, and lifeless. He notices your presence, and braces himself.<br>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>b2d2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    //////////////////B2A1//////////////////
+
+    <string-array name="b2a2">
+        <item>
+            <![CDATA[
+            You pick up the sword.<br>
+            <br>
+            <em>"This sword will cut through steel and magic, but it will not hold in face of strong spells. Be careful with your defense." </em><br>
+            <br>
+            <em>"Are you sure you will use this?"</em>
+            ]]>
+        </item>
+        <item>> Yes</item>
+        <item>> No</item>
+        <item>a5</item>
+        <item>a5</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
 
 </resources>
