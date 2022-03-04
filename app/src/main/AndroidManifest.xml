@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Group15_DecisionBasedGame">
         <activity
-            android:name="com.example.group15_decisionbasedgame.MainActivity"
+            android:name="com.example.group15_decisionbasedgame.View.DialogueView"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

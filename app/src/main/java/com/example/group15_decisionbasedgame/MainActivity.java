@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int imageNum;
     //Delay of text
     int delay;
-    int delayMult = 10; //25 is a good speed
+    int delayMult = 20; //25 is a good speed
     // Last item of the String []
     int lastItem;
     //length of the String []

@@ -7,6 +7,8 @@
     <string name="default_Button3">Sample text that would take up two lines within the button.</string>
     <string name="default_Button4">Sample text that would take up two lines within the button.</string>
     <string name="reset">RESET GAME</string>
+    <string name="popOut1">You didn\'t grab the wrong item, didn\'t you?</string>
+    <string name="popOut2">Ho ho, feeling lucky ey. How did you get here?</string>
 
     <string-array name="default_text">
         //Scenario Prompt
