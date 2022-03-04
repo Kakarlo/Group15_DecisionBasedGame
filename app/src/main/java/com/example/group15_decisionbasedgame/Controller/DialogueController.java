@@ -14,6 +14,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.core.text.HtmlCompat;
 
 import com.example.group15_decisionbasedgame.Model.Dialogue;
+import com.example.group15_decisionbasedgame.Model.MusicPlayer;
 import com.example.group15_decisionbasedgame.R;
 import com.example.group15_decisionbasedgame.View.DialogueView;
 
@@ -22,11 +23,14 @@ public class DialogueController {
     private final DialogueView dv;
     private CountDownTimer timer;
     private final SharedPreferences sp;
+    private final MusicPlayer m;
 
     public DialogueController(DialogueView dialogueView) {
         this.dv = dialogueView;
         this.sp = dv.getPreferences(Context.MODE_PRIVATE);
-        this.d = new Dialogue(this, sp);
+        this.d = new Dialogue(sp);
+        this.m = new MusicPlayer(dialogueView);
+        m.startMusic();
     }
 
     public void firstScene(String[] stringArr) {
@@ -45,9 +49,10 @@ public class DialogueController {
     }
 
     public void getStringArr() {
-        int arrID = dv.getResources().getIdentifier(d.getChoice(), "array", dv.getPackageName());
         try {
-            d.setTxt(dv.getResources().getStringArray(arrID));
+            if (d.getChoice() != null) {
+                d.setTxt(dv.getResources().getStringArray(dv.getResources().getIdentifier(d.getChoice(), "array", dv.getPackageName())));
+            }
         } catch (Exception e) {
             d.setTxt(dv.getResources().getStringArray(R.array.errorMessage));
         }
@@ -58,17 +63,39 @@ public class DialogueController {
         hideButton();
         clearAnim();
         d.sceneCheck(state);
+        getStringArr();
+        d.textChange();
         textChange();
         imageChange();
-        popOut();
+        if (d.isFailed()){
+            popOutText(d.getPopOutText());
+        } else {
+            popOut();
+        }
     }
-
-    public void save() {d.Save();}
 
     public void reset() {
         d.Reset();
         loadTxt();
+        hideButton();
+        clearAnim();
+        d.textChange();
+        textChange();
+        imageChange();
+        if (d.isFailed()){
+            popOutText(d.getPopOutText());
+        } else {
+            popOut();
+        }
     }
+
+    public void save() {d.Save();}
+
+    public void stop() {m.stopMusic();}
+
+    public void pause() {m.pauseMusic();}
+
+    public void resume() {m.resumeMusic();}
 
     private void textChange() {
         if (d.getNumOfChoice() == 4){ //for 4 choices scenario

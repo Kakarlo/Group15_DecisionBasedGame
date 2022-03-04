@@ -2,24 +2,13 @@ package com.example.group15_decisionbasedgame.Model;
 
 import android.content.SharedPreferences;
 
-import com.example.group15_decisionbasedgame.Controller.DialogueController;
-
 public class Dialogue {
-    private final DialogueController dc;
     private final SharedPreferences sp;
     private SharedPreferences.Editor editor;
 
-    public Dialogue(DialogueController controller, SharedPreferences sharedPreferences) {
-        this.dc = controller;
-        this.sp = sharedPreferences;
-    }
+    public Dialogue(SharedPreferences sharedPreferences) {this.sp = sharedPreferences;}
 
     private String[] txt;
-
-    public String[] getFirstTxt() {return firstTxt;}
-
-    public void setFirstTxt(String[] firstTxt) {this.firstTxt = firstTxt;}
-
     private String[] firstTxt;
     private String choice;
     private String ending;
@@ -50,6 +39,7 @@ public class Dialogue {
     public int getItemState() {return sp.getInt("ItemState", 0);} //Which item was picked
     private int item;
     boolean failed,restricted;
+    private int popOutText;
     //Text Delay
     boolean allowDelay = true;
 
@@ -58,7 +48,6 @@ public class Dialogue {
         if (buttonState == 0) {
             //Runs if no choices has been made
             arrayCheck();
-            textChange();
         } else if (restricted) {
             restricted = false;
             restricted();
@@ -68,20 +57,16 @@ public class Dialogue {
             String check = txt[lastItem];
             switch (check) {
                 case "Dialog":
-                    textChange();
                     break;
                 case "Restricted":
                     restricted = true;
                     textLength -=1; //Done as the Restricted Array has 1 more item than the rest
-                    textChange();
                     break;
                 case "Item":
                     item = 2;
-                    textChange();
                     break;
                 case "Ending":
                     ending = choice;
-                    textChange();
                     ending();
                     break;
             }
@@ -92,19 +77,15 @@ public class Dialogue {
         //checks if the scenario is now restricted
         if (buttonState != 0 && !failed) {
             choice = txt[numOfChoice + buttonState];
-            dc.getStringArr();
-            textLength = txt.length;
         } else if (failed) {
             choice = txt[lastItem - 1];
-            dc.getStringArr();
             textLength = txt.length;
             failed = false;
-        } else {
-            textLength = txt.length;
         }
     }
 
     public void textChange() {
+        textLength = txt.length;
         //Checks if delay is to be applied
         if (allowDelay) {
             delay = txt[0].length() * delayMult;
@@ -139,17 +120,14 @@ public class Dialogue {
                 if (getItemState() == 2) {
                     failed = false;
                 } else {
-                    dc.popOutText(1);
+                    popOutText = 1;
                     failed = true;
                 }
             } else {
-                dc.popOutText(2);
+                popOutText = 2;
                 failed = true;
             }
             arrayCheck();
-            textChange();
-        } else if (buttonState == 2) {
-            textChange();
         }
     }
 
@@ -204,19 +182,19 @@ public class Dialogue {
     }
 
     //Getters
+    public String[] getFirstTxt() {return firstTxt;}
     public String getTxtString(int index) {return txt[index];}
     public String getChoice() {return choice;}
     public int getDelay() {return delay;}
     public int getNumOfChoice() {return numOfChoice;}
     public int getTextSkip() {return textSkip;}
+    public int getPopOutText() {return popOutText;}
+    public boolean isFailed() {return failed;}
 
     //Setters
+    public void setFirstTxt(String[] firstTxt) {this.firstTxt = firstTxt;}
     public void setTxt(String[] text) {this.txt = text;}
     public void setImageNum(int imageNum) {this.imageNum = imageNum;}
     public void setTextSkip(int textSkip) {this.textSkip = textSkip;}
-
-
-
-
 
 }

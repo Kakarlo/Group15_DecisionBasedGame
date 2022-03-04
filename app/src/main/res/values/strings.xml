@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">Decision_Based_Game_Test</string>
     //default text
     <string name="default_txtView">You are in Biology class, your teacher is discussing about the Performance Task that is due on Monday. What do you do?</string>
@@ -499,9 +499,24 @@
             <br>
             You get in range, and slash, but she blocks it with a barrier.<br>
             <br>
-            <em>"Your weapon may be strong, but it is not enough against my magic."</em><br>
+            <em>"Your weapon may be strong, but it is not enough against my magic."</em>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>b2a2a2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2a2a2">
+        <item>
+            <![CDATA[
+            She locks your sword in the barrier, before long it begins to glow.<br>
             <br>
-            She locks your sword in the barrier, before long it begins to glow. She notices this and throws it away, leaving you helpless against her attacks. As you draw your final breath and all turns black, you see a small tear being shed for you
+            She notices this and throws it away, leaving you helpless against her attacks.<br>
+            <br>
+            As you draw your final breath and all turns black, you see a small tear being shed for you
             ]]>
         </item>
         <item>> GAME OVER</item>
@@ -518,17 +533,28 @@
             <br>
             With every spear blocked, you start to feel your sword beginning to burn brightly. The witch falters at the sight of the glowing blade<br>
             <br>
-            <em>"No…not again!"</em><br>
-            <br>
-            She summons more spears, but before she can fire them, you move in for the kill, but she blocks it with a barrier.<br>
-            <br>
-            <em>"My magic is strong! I won\'t lose against you!"<br>
-            </em><br>
-            With her trembling voice, she begins to chant a spell, but her barrier begins to crack as the bright sword pressures her magic.<br>
+            <em>"No…not again!"</em>
             ]]>
         </item>
         <item>> Continue</item>
         <item>b2a2b2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2a2b2">
+        <item>
+            <![CDATA[
+            She summons more spears, but before she can fire them, you move in for the kill, but she blocks it with a barrier.<br>
+            <br>
+            <em>"My magic is strong! I won\'t lose against you!"<br>
+            </em><br>
+            With her trembling voice, she begins to chant a spell, but her barrier begins to crack as the bright sword pressures her magic.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>b2a2b3</item>
         <item>1</item>
         <item>1</item>
         <item>Dialog</item>
@@ -560,7 +586,7 @@
         <item>Dialog</item>
     </string-array>
 
-    <string-array name="b2a2b2">
+    <string-array name="b2a2b3">
         <item>
             <![CDATA[
            She notices the cracks, and fumbles her spell, shocking her due to recoil. This causes the barrier to break, and your sword to deal her a fatal blow.<br>
@@ -621,9 +647,7 @@
             <br>
             The maniac is relentless with his offense, but you are no different. His harrowing laugh is contagious, as you begin to enjoy the battle as well.<br>
             <br>
-            Eventually, the maniac backs off for a moment to catch his breath. Seeing this opening, you go in for the kill.<br>
-            <br>
-            <strong>&gt;Continue</strong>
+            Eventually, the maniac backs off for a moment to catch his breath. Seeing this opening, you go in for the kill.
             ]]>
         </item>
         <item>> Continue</item>
@@ -642,8 +666,19 @@
             </em><br>
             He begins to slash away at you, but you manage to be patient and block his relentless attacks. The maniac grows restless, as with every block and parry his attacks grow faster.<br>
             <br>
-            <em>"WHY…ARENT…YOU…FIGHTING?!!"<br>
-            </em><br>
+            <em>"WHY…ARENT…YOU…FIGHTING?!!"</em>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>b2b2b2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="b2b2b2">
+        <item>
+            <![CDATA[
             He screams. You keep blocking and playing defense, you are yet to find an opening, and attacks are getting faster with every second. But eventually, he pauses and backs off for a breath.<br>
             <br>
             You go in for the kill, but as you swing your sword, the cracks begin to show, and it shatters to pieces.<br>
@@ -1016,8 +1051,23 @@
             You get in range, and bash, but she blocks it with a barrier.<br>
             <br>
             <em>"Your weapon may be strong, but it is not enough against my magic."</em><br>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>c2a2a2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2a2a2">
+        <item>
+            <![CDATA[
+            She locks your shield in the barrier, before long it begins to glow and absorb the barrier\'s magic.<br>
             <br>
-            She locks your shield in the barrier, before long it begins to glow and absorb the barrier\'s magic She notices this and throws it away, leaving you helpless against her attacks. As you draw your final breath and all turns black, you see a small tear being shed for you
+            She notices this and throws it away, leaving you helpless against her attacks. <br>
+            <br>
+            As you draw your final breath and all turns black, you see a small tear being shed for you
             ]]>
         </item>
         <item>> GAME OVER</item>
@@ -1274,8 +1324,19 @@
             </em><br>
             It raises its claw high in the air. In this moment, you take the opportunity to aim your shield towards the dragon\'s head, and release the absorbed magic.<br>
             <br>
-            The magic hits its head, and the dragon falls to the earth. In its final breath, it said<br>
-            <br>
+            The magic hits its head, and the dragon falls to the earth. In its final breath, it said
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>c2c2b3</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2c2b3">
+        <item>
+            <![CDATA[
             <em>"Your scent…is just like mine…"<br>
             </em><br>
             You have defeated a curse, allowing the Guardian to eliminate the other curses, reclaiming the sacred forest.<br>
@@ -1386,8 +1447,19 @@
             <br>
             <em>"Please....kill...me..."<br>
             </em><br>
-            Your shield burns bright as magic shoots out from its center.<br>
-            <br>
+            Your shield burns bright as magic shoots out from its center.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>c2d2a3</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="c2d2a3">
+        <item>
+            <![CDATA[
             You have defeated a curse, allowing the Guardian to eliminate the other curses, reclaiming the sacred forest.<br>
             <br>
             Though you feel something is amiss, all is well.<br>

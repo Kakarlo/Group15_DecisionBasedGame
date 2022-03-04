@@ -81,6 +81,18 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
         dc.changeScene(0);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        dc.resume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        dc.pause();
+    }
+
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
@@ -99,7 +111,6 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.reset:
                 dc.reset();
-                dc.changeScene(0);
         }
     }
 
@@ -107,5 +118,13 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
     protected void onStop() {
         super.onStop();
         dc.save();
+        dc.pause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        dc.stop();
+        finish();
     }
 }
