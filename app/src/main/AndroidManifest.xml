@@ -10,15 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Group15_DecisionBasedGame">
         <activity
-            android:name="com.example.group15_decisionbasedgame.View.DialogueView"
+            android:name=".View.Menu"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".View.DialogueView"
+            android:screenOrientation="portrait"
+            android:exported="false"/>
+        <activity android:name=".View.Pause"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            android:exported="false"/>
     </application>
 
 </manifest>

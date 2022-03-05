@@ -12,8 +12,6 @@ public class Dialogue {
     private String[] firstTxt;
     private String choice;
     private String ending;
-    //Where the image data is in the String []
-    private int imageNum;
     //Delay of text
     private int delay;
     private final int delayMult = 20; //25 is a good speed
@@ -157,11 +155,6 @@ public class Dialogue {
         }
     }
 
-    public int imageChange() {
-        //Changes image
-        return Integer.parseInt(txt[imageNum].replaceAll("[\\D]", ""));
-    }
-
     public void Save() {
         if (choice != null) {
             editor = sp.edit();
@@ -185,6 +178,7 @@ public class Dialogue {
     public String[] getFirstTxt() {return firstTxt;}
     public String getTxtString(int index) {return txt[index];}
     public String getChoice() {return choice;}
+    public String getBackNum() {return this.txt[txt.length - 2];}
     public int getDelay() {return delay;}
     public int getNumOfChoice() {return numOfChoice;}
     public int getTextSkip() {return textSkip;}
@@ -194,7 +188,6 @@ public class Dialogue {
     //Setters
     public void setFirstTxt(String[] firstTxt) {this.firstTxt = firstTxt;}
     public void setTxt(String[] text) {this.txt = text;}
-    public void setImageNum(int imageNum) {this.imageNum = imageNum;}
     public void setTextSkip(int textSkip) {this.textSkip = textSkip;}
 
 }

@@ -24,6 +24,7 @@ public class DialogueController {
     private CountDownTimer timer;
     private final SharedPreferences sp;
     private final MusicPlayer m;
+    private int prevB;
 
     public DialogueController(DialogueView dialogueView) {
         this.dv = dialogueView;
@@ -40,6 +41,7 @@ public class DialogueController {
     }
 
     public void loadTxt() {
+        //Loads your previous stage if available
         try {
             int i = dv.getResources().getIdentifier(sp.getString("textID", "null"), "array", dv.getPackageName());
             d.setTxt(dv.getResources().getStringArray(i));
@@ -66,7 +68,7 @@ public class DialogueController {
         getStringArr();
         d.textChange();
         textChange();
-        imageChange();
+        backgroundChange();
         if (d.isFailed()){
             popOutText(d.getPopOutText());
         } else {
@@ -81,7 +83,7 @@ public class DialogueController {
         clearAnim();
         d.textChange();
         textChange();
-        imageChange();
+        backgroundChange();
         if (d.isFailed()){
             popOutText(d.getPopOutText());
         } else {
@@ -132,8 +134,6 @@ public class DialogueController {
         dv.button2.startAnimation(dv.fadelate2);
         dv.button3.startAnimation(dv.fadelate3);
         dv.button4.startAnimation(dv.fadelate4);
-        //Sets the imageNumber
-        d.setImageNum(9);
     }
 
     private void choices3() {
@@ -155,8 +155,6 @@ public class DialogueController {
         dv.button.startAnimation(dv.fadelate);
         dv.button2.startAnimation(dv.fadelate2);
         dv.button3.startAnimation(dv.fadelate3);
-        //Sets the imageNumber
-        d.setImageNum(7);
     }
 
     private void choices2() {
@@ -174,8 +172,6 @@ public class DialogueController {
         dv.textBox.startAnimation(dv.fade);
         dv.button.startAnimation(dv.fadelate);
         dv.button2.startAnimation(dv.fadelate2);
-        //Sets the imageNumber
-        d.setImageNum(5);
     }
 
     private void choices1() {
@@ -189,8 +185,6 @@ public class DialogueController {
         //Starts Animation
         dv.textBox.startAnimation(dv.fade);
         dv.button.startAnimation(dv.fadelate);
-        //Sets the imageNumber
-        d.setImageNum(3);
     }
 
     private void hideButton() {
@@ -210,13 +204,18 @@ public class DialogueController {
         dv.popOutLayout.clearAnimation();
     }
 
-    private void imageChange() {
+    private void backgroundChange() {
         try {
-            int imgID = dv.getResources().getIdentifier("umaru" + d.imageChange(), "drawable", dv.getPackageName());
-            Drawable image = ResourcesCompat.getDrawable(dv.getResources(), imgID, null);
-            dv.imageView.setImageDrawable(image);
+            String a = d.getBackNum();
+            int bgID = dv.getResources().getIdentifier( a, "drawable", dv.getPackageName());
+            Drawable image = ResourcesCompat.getDrawable(dv.getResources(), bgID, null);
+            //Only changes the background when a new background is detected
+            if (bgID != prevB) {
+                dv.backView.setImageDrawable(image);
+            }
+            prevB = bgID;
         } catch (Exception e){
-            Log.d(TAG, "imageChange: Oops! no image");
+            Log.d(TAG, "backgroundChange: Oops! no image");
         }
     }
 

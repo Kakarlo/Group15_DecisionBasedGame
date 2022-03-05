@@ -16,7 +16,20 @@ public class MusicPlayer {
 
     private MediaPlayer music;
     private int musicID;
+
+    public void setAllowMusic(boolean allowMusic) {this.allowMusic = allowMusic;}
+
     private boolean allowMusic = true;
+
+    public void toggle() {
+        if(allowMusic) {
+            stopMusic();
+            allowMusic = false;
+        } else {
+            allowMusic = true;
+            startMusic();
+        }
+    }
 
     public void startMusic () {
         if (allowMusic) {
@@ -48,6 +61,7 @@ public class MusicPlayer {
                     musicID = 0;
                     break;
             }
+            //condition in case no musicID had no value
             if (musicID != 0) {
                 music = MediaPlayer.create(context, musicID);
                 music.setOnPreparedListener(mp -> {

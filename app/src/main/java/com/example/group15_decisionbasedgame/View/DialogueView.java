@@ -1,6 +1,8 @@
 package com.example.group15_decisionbasedgame.View;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -26,7 +28,7 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
     public TextView textBox,popOut;
     public ImageView imageView, backView;
     public Button button,button2,button3,button4,reset;
-    public ConstraintLayout popOutLayout;
+    public ConstraintLayout popOutLayout,mainLayout;
     public DialogueController dc;
 
     @Override
@@ -35,7 +37,7 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Objects.requireNonNull(getSupportActionBar()).hide();
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.dialogue);
 
         //Button call
         button = findViewById(R.id.button);
@@ -72,6 +74,7 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
 
         //Layout call
         popOutLayout = findViewById(R.id.popOutLayout);
+        mainLayout = findViewById(R.id.constraintLayoutID);
 
         //Initialize class
         dc = new DialogueController(this);
@@ -115,6 +118,13 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    public void onBackPressed() {
+        onPause();
+        Intent intent = new Intent(this, Pause.class);
+        startActivity(intent);
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         dc.save();
@@ -125,6 +135,5 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
     protected void onDestroy() {
         super.onDestroy();
         dc.stop();
-        finish();
     }
 }
