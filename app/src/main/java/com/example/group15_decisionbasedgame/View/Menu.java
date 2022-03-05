@@ -25,6 +25,8 @@ public class Menu extends AppCompatActivity implements View.OnClickListener{
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.menu);
 
+        overridePendingTransition(android.R.anim.fade_in , android.R.anim.fade_out);
+
         //Button Call
         btn1 = findViewById(R.id.start);
         btn2 = findViewById(R.id.setting);

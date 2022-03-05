@@ -2,7 +2,6 @@ package com.example.group15_decisionbasedgame.View;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -27,7 +26,7 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
     public Animation fade,fadelate,fadelate2,fadelate3,fadelate4,fadeInOut;
     public TextView textBox,popOut;
     public ImageView imageView, backView;
-    public Button button,button2,button3,button4,reset;
+    public Button button,button2,button3,button4;
     public ConstraintLayout popOutLayout,mainLayout;
     public DialogueController dc;
 
@@ -39,19 +38,19 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.dialogue);
 
+        overridePendingTransition(android.R.anim.fade_in , android.R.anim.fade_out);
+
         //Button call
         button = findViewById(R.id.button);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
         button4 = findViewById(R.id.button4);
-        reset = findViewById(R.id.reset);
 
         //Button listener
         button.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
         button4.setOnClickListener(this);
-        reset.setOnClickListener(this);
 
         //TextView Call
         textBox = findViewById(R.id.txtBox);
@@ -62,7 +61,7 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
         backView = findViewById(R.id.backView);
 
         //Animation call
-        fade = AnimationUtils.loadAnimation(this,R.anim.fade);
+        fade = AnimationUtils.loadAnimation(this,R.anim.fade_in);
         fadelate = AnimationUtils.loadAnimation(this, R.anim.fade_late);
         fadelate2 = AnimationUtils.loadAnimation(this, R.anim.fade_late);
         fadelate3 = AnimationUtils.loadAnimation(this, R.anim.fade_late);
@@ -112,8 +111,6 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
             case R.id.button4:
                 dc.changeScene(4);
                 break;
-            case R.id.reset:
-                dc.reset();
         }
     }
 

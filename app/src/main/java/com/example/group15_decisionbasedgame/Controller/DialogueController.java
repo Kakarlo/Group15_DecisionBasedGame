@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -28,9 +30,9 @@ public class DialogueController {
 
     public DialogueController(DialogueView dialogueView) {
         this.dv = dialogueView;
-        this.sp = dv.getPreferences(Context.MODE_PRIVATE);
+        this.sp = dv.getSharedPreferences("StoredData", Context.MODE_PRIVATE);
         this.d = new Dialogue(sp);
-        this.m = new MusicPlayer(dialogueView);
+        this.m = new MusicPlayer(dialogueView, sp);
         m.startMusic();
     }
 
@@ -76,18 +78,24 @@ public class DialogueController {
         }
     }
 
-    public void reset() {
-        d.Reset();
-        loadTxt();
-        hideButton();
-        clearAnim();
-        d.textChange();
-        textChange();
-        backgroundChange();
-        if (d.isFailed()){
-            popOutText(d.getPopOutText());
-        } else {
-            popOut();
+    private void reset() {
+        //TODO: New Feature
+        if(sp.getBoolean("ResetProgress", false)) {
+            d.Reset();
+            loadTxt();
+            hideButton();
+            clearAnim();
+            d.textChange();
+            textChange();
+            backgroundChange();
+            if (d.isFailed()) {
+                popOutText(d.getPopOutText());
+            } else {
+                popOut();
+            }
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putBoolean("ResetProgress", false);
+            editor.apply();
         }
     }
 
@@ -97,7 +105,7 @@ public class DialogueController {
 
     public void pause() {m.pauseMusic();}
 
-    public void resume() {m.resumeMusic();}
+    public void resume() {m.resumeMusic();m.toggle();reset();}
 
     private void textChange() {
         if (d.getNumOfChoice() == 4){ //for 4 choices scenario

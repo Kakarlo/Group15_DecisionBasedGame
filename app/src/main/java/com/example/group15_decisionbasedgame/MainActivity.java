@@ -421,7 +421,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         backView = findViewById(R.id.backView);
 
         //Animation call
-        fade = AnimationUtils.loadAnimation(this,R.anim.fade);
+        fade = AnimationUtils.loadAnimation(this,R.anim.fade_in);
         fadelate = AnimationUtils.loadAnimation(this, R.anim.fade_late);
         fadelate2 = AnimationUtils.loadAnimation(this, R.anim.fade_late);
         fadelate3 = AnimationUtils.loadAnimation(this, R.anim.fade_late);

@@ -1,6 +1,7 @@
 package com.example.group15_decisionbasedgame.Model;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 
 import com.example.group15_decisionbasedgame.R;
@@ -9,25 +10,31 @@ import java.util.Random;
 
 public class MusicPlayer {
     private final Context context;
+    private final SharedPreferences sp;
 
-    public MusicPlayer (Context context) {
+    public MusicPlayer (Context context, SharedPreferences sharedPreferences) {
         this.context = context;
+        this.sp = sharedPreferences;
     }
 
     private MediaPlayer music;
     private int musicID;
 
-    public void setAllowMusic(boolean allowMusic) {this.allowMusic = allowMusic;}
-
     private boolean allowMusic = true;
 
     public void toggle() {
-        if(allowMusic) {
-            stopMusic();
-            allowMusic = false;
-        } else {
-            allowMusic = true;
-            startMusic();
+        //Checks if the music was toggled in settings
+        if (sp.getBoolean("toggleMusic", false)) {
+            if (allowMusic) {
+                stopMusic();
+                allowMusic = false;
+            } else {
+                allowMusic = true;
+                startMusic();
+            }
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putBoolean("toggleMusic", false);
+            editor.apply();
         }
     }
 
@@ -61,19 +68,21 @@ public class MusicPlayer {
                     musicID = 0;
                     break;
             }
-            //condition in case no musicID had no value
-            if (musicID != 0) {
-                music = MediaPlayer.create(context, musicID);
-                music.setOnPreparedListener(mp -> {
-                    music.setVolume(0.5f, 0.5f);
-                    music.start();
-                });
+            if (music == null) {
+                Thread thread = new Thread(() -> {
+                    music = MediaPlayer.create(context, musicID);
+                    music.setOnPreparedListener(mp -> {
+                        music.setVolume(0.5f, 0.5f);
+                        music.start();
+                    });
 
-                //Plays another song
-                music.setOnCompletionListener(mediaPlayer -> {
-                    stopMusic();
-                    startMusic();
+                    //Plays another song
+                    music.setOnCompletionListener(mediaPlayer -> {
+                        stopMusic();
+                        startMusic();
+                    });
                 });
+                thread.start();
             }
         }
     }

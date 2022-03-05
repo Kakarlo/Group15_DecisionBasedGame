@@ -23,7 +23,7 @@
         android:id="@+id/textBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@drawable/dialogue_b"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
@@ -64,8 +64,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/choices"
-        android:layout_width="411dp"
-        android:layout_height="289dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/backView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,8 +75,9 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="369dp"
+            android:layout_width="match_parent"
             android:layout_height="59dp"
+            android:backgroundTint="@color/greyish"
             android:gravity="center"
             android:text="@string/default_Button1"
             android:textAllCaps="false"
@@ -86,8 +88,9 @@
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="369dp"
+            android:layout_width="match_parent"
             android:layout_height="59dp"
+            android:backgroundTint="@color/greyish"
             android:gravity="center"
             android:text="@string/default_Button2"
             android:textAllCaps="false"
@@ -99,8 +102,9 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="369dp"
+            android:layout_width="match_parent"
             android:layout_height="59dp"
+            android:backgroundTint="@color/greyish"
             android:gravity="center"
             android:text="@string/default_Button3"
             android:textAllCaps="false"
@@ -112,8 +116,9 @@
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="369dp"
+            android:layout_width="match_parent"
             android:layout_height="59dp"
+            android:backgroundTint="@color/greyish"
             android:gravity="center"
             android:text="@string/default_Button4"
             android:textAllCaps="false"
@@ -144,16 +149,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:id="@+id/reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset Game"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/backView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

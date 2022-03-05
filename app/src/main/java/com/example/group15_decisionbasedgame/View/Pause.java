@@ -1,7 +1,14 @@
 package com.example.group15_decisionbasedgame.View;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -14,6 +21,8 @@ import com.example.group15_decisionbasedgame.R;
 public class Pause extends AppCompatActivity implements View.OnClickListener{
 
     Button btn1,btn2,btn3,btn4;
+    SharedPreferences sp;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +31,12 @@ public class Pause extends AppCompatActivity implements View.OnClickListener{
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.pause);
+
+        overridePendingTransition(android.R.anim.fade_in , android.R.anim.fade_out);
+
+        //Shared Preference
+        sp = getSharedPreferences("StoredData", Context.MODE_PRIVATE);
+        editor = sp.edit();
 
         //Button Call
         btn1 = findViewById(R.id.returnToPrevious);
@@ -48,11 +63,14 @@ public class Pause extends AppCompatActivity implements View.OnClickListener{
                 finish();
                 break;
             case R.id.musicToggle:
-
+                editor.putBoolean("toggleMusic", true);
+                editor.apply();
+                Log.d(TAG, "onClick: " + sp.getBoolean("allowMusic", false));
                 finish();
                 break;
             case R.id.resetProgress:
-
+                editor.putBoolean("ResetProgress", true);
+                editor.apply();
                 finish();
                 break;
         }
