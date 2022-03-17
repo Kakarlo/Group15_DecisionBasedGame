@@ -242,6 +242,15 @@
         <item>Dialog</item>
     </string-array>
 
+    ////////////////////////////////////////////////////////////MENU TEXT////////////////////////////////////////////////////////////
+    <string name="text_1">Return</string>
+    <string name="text_2">Return to Start</string>
+    <string name="text_3">Toggle Sound</string>
+    <string name="text_4">Reset Game</string>
+    <string name="text_5">Are you sure?</string>
+    <string name="text_6">Yes</string>
+    <string name="text_7">No</string>
+
     ////////////////////////////////////////////////////////////ERROR CATCH////////////////////////////////////////////////////////////
 
     <string-array name="errorMessage">
@@ -251,7 +260,7 @@
             ]]>
         </item>
         <item>> Return to Start</item>
-        <item>a1</item>
+        <item>gameOver</item>
         <item>1</item>
         <item>background1</item>
         <item>Dialog</item>
@@ -260,26 +269,49 @@
     <string-array name="gameOver">
         <item>
             <![CDATA[
-            You were trying to cross the border, right? Walked right into that Imperial ambush, same as us, and that thief over there. Damn you Stormcloaks. Skyrim was fine until you came along. Empire was nice and lazy. If they hadn\'t been looking for you, I could\'ve stolen that horse and be halfway to Hammerfell.
-            ]]>
-        </item>
-        <item>> Return to Start</item>
-        <item>a1</item>
-        <item>1</item>
-        <item>background1</item>
-        <item>Dialog</item>
-    </string-array>
-
-    ////////////////////////////////////////////////////////////START GAME////////////////////////////////////////////////////////////
-
-    <string-array name="a1">
-        <item>
-            <![CDATA[
             You wake up, finding yourself in the middle of a forest. The trees are thick and the sky is dark, you feel <br> as if something is wrong.<br>
             <br>
             Your body is cramped and you find it hard to move<br>
             <br>
             Regardless, you stand up, and your eyes are drawn to the path ahead of you.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>a2</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    ////////////////////////////////////////////////////////////START GAME////////////////////////////////////////////////////////////
+
+    <string-array name="a1_1">
+        <item>
+            <![CDATA[
+             You wake up, finding yourself in the middle of a forest. The trees are thick and the sky is dark. You feel like you\'ve been here before<br>
+             <br>
+            A familiar fatigue strikes your entire body. Suddenly, flashes of events you are yet, or already have, experienced rush through your mind.<br>
+            <br>
+            It seems you\'ve returned back in time. The uneasiness you felt after killing the curses linger still. Perhaps a different choice will answer your questions.<br>
+            <br>
+            Determined, you stand up, eyes drawn to the path ahead of you once more.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>a2</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="a1_2">
+        <item>
+            <![CDATA[
+            You wake up, finding yourself in the middle of the forest. The trees are thick and the sky is dark.<br> You\'ve been here countless times now.<br>
+            <br>
+            Your memories are clear, and though the curse is strong, a long forgotten duty must be fulfilled.<br>
+            <br>
+            Determined, you stand up, eyes drawn to the path ahead of you once more.
             ]]>
         </item>
         <item>> Continue</item>
@@ -348,8 +380,8 @@
         </item>
         <item>> Sword</item>
         <item>> Shield</item>
-        <item>> Sword and Shield</item>
         <item>> Unarmed</item>
+        <item>> Sword and Shield</item>
         <item>b1</item>
         <item>c1</item>
         <item>d1</item>
@@ -433,7 +465,7 @@
         <item>> Continue</item>
         <item>b2b2</item>
         <item>1</item>
-        <item>witch_church</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -517,9 +549,11 @@
             She notices this and throws it away, leaving you helpless against her attacks.<br>
             <br>
             As you draw your final breath and all turns black, you see a small tear being shed for you
+            <br><br>
+            <strong>-GAME OVER-</strong>
             ]]>
         </item>
-        <item>> GAME OVER</item>
+        <item>> Remember</item>
         <item>gameOver</item>
         <item>1</item>
         <item>witch_church</item>
@@ -602,8 +636,8 @@
             <strong>-E N D-</strong>
             ]]>
         </item>
-        <item>> Return to Start</item>
-        <item>a1</item>
+        <item>> Remember</item>
+        <item>a1_1</item>
         <item>1</item>
         <item>good_ending</item>
         <item>Ending</item>
@@ -632,7 +666,7 @@
         <item>b2b2c1</item>
         <item>b2b2d1</item>
         <item>1</item>
-        <item>1</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -653,7 +687,7 @@
         <item>> Continue</item>
         <item>b2b2a2</item>
         <item>1</item>
-        <item>1</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -672,7 +706,7 @@
         <item>> Continue</item>
         <item>b2b2b2</item>
         <item>1</item>
-        <item>1</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -684,12 +718,14 @@
             You go in for the kill, but as you swing your sword, the cracks begin to show, and it shatters to pieces.<br>
             <br>
             You look up towards the maniac, and the last thing you saw was his smile and your reflection on his blade.
+            <br><br>
+            <strong>-GAME OVER-</strong>
             ]]>
         </item>
-        <item>> GAME OVER</item>
+        <item>> Remember</item>
         <item>gameOver</item>
         <item>1</item>
-        <item>1</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -702,7 +738,7 @@
         <item>> Return</item>
         <item>b2b2</item>
         <item>1</item>
-        <item>1</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -715,7 +751,7 @@
         <item>> Return</item>
         <item>b2b2</item>
         <item>1</item>
-        <item>1</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -733,10 +769,10 @@
             <strong>-E N D-</strong>
             ]]>
         </item>
-        <item>> Return to Start</item>
-        <item>a1</item>
+        <item>> Remember</item>
+        <item>a1_1</item>
         <item>1</item>
-        <item>1</item>
+        <item>good_ending</item>
         <item>Ending</item>
     </string-array>
 
@@ -775,9 +811,11 @@
             <em>"HAHAHA! YOU ARE MORE FOOLISH THAN I THOUGHT."<br>
             </em><br>
             And at that moment, the dragon breaths
+            <br><br>
+            <strong>-GAME OVER-</strong>
             ]]>
         </item>
-        <item>> GAME OVER</item>
+        <item>> Remember</item>
         <item>gameOver</item>
         <item>1</item>
         <item>dragon_lair</item>
@@ -790,9 +828,11 @@
             You ready your sword as the dragon opens its mouth. You would think that the sword would be able to cut a dragon\'s breath in half.<br>
             <br>
             But unfortunately, reality isn\'t always in your favor, as a dragon\'s breath is too wide to cut in half for your size.
+            <br><br>
+            <strong>-GAME OVER-</strong>
             ]]>
         </item>
-        <item>> GAME OVER</item>
+        <item>> Remember</item>
         <item>gameOver</item>
         <item>1</item>
         <item>1</item>
@@ -856,9 +896,11 @@
             Throwing away your doubts, you lunge in towards the priest. He yelps, and begins to throws out a barrage of spells at you.<br>
             <br>
             While moving towards him, you hack away at the never ending projectiles coming from his staff. But your efforts are in vain as your arms begin to give out, and you are slowly swallowed by his magic.
+            <br><br>
+            <strong>-GAME OVER-</strong>
             ]]>
         </item>
-        <item>> GAME OVER</item>
+        <item>> Remember</item>
         <item>gameOver</item>
         <item>1</item>
         <item>priest_swamp</item>
@@ -871,9 +913,11 @@
             Listening to his cries, you lower your sword and attempt to approach him. But unfortunately, this made him even more paranoid, as you look very intimidating while holding a weapon.<br>
             <br>
             Raising his staff, he shoots a fast laser spell aimed towards your forehead before you could do anything, and all turned dark.
+            <br><br>
+            <strong>-GAME OVER-</strong>
             ]]>
         </item>
-        <item>> GAME OVER</item>
+        <item>> Remember</item>
         <item>gameOver</item>
         <item>1</item>
         <item>priest_swamp</item>
@@ -984,7 +1028,7 @@
         <item>> Continue</item>
         <item>c2b2</item>
         <item>1</item>
-        <item>1</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -1068,9 +1112,11 @@
             She notices this and throws it away, leaving you helpless against her attacks. <br>
             <br>
             As you draw your final breath and all turns black, you see a small tear being shed for you
+            <br><br>
+            <strong>-GAME OVER-</strong>
             ]]>
         </item>
-        <item>> GAME OVER</item>
+        <item>> Remember</item>
         <item>gameOver</item>
         <item>1</item>
         <item>witch_church</item>
@@ -1091,9 +1137,11 @@
             <em>"I won\'t lose again."<br>
             </em><br>
             With her trembling voice, she summons her remaining spears, and fires.<br>
+            <br>
+            <strong>-GAME OVER-</strong>
             ]]>
         </item>
-        <item>> GAME OVER</item>
+        <item>> Remember</item>
         <item>gameOver</item>
         <item>1</item>
         <item>witch_church</item>
@@ -1149,7 +1197,7 @@
         <item>c2b2c1</item>
         <item>c2b2d1</item>
         <item>1</item>
-        <item>1</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -1165,13 +1213,14 @@
             The maniac is relentless with his offense, and eventually he breaks your guard and deals a fatal blow.<br>
             <br>
             As your head falls to the ground, the last thing you hear is a bone-chilling laugh echoing throughout the plains<br>
-
+            <br>
+            <strong>-GAME OVER-</strong>
             ]]>
         </item>
-        <item>> GAME OVER</item>
+        <item>> Remember</item>
         <item>gameOver</item>
         <item>1</item>
-        <item>1</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -1191,12 +1240,14 @@
             You go in for the kill, but you can only do so much with a shield. The maniac parries your attack with one sword and stabs you with the other <br>
             <br>
             You look up towards the maniac, and the last thing you saw was his smile and your reflection in his eyes. <br>
+            <br>
+            <strong>-GAME OVER-</strong>
             ]]>
         </item>
-        <item>> GAME OVER</item>
+        <item>> Remember</item>
         <item>gameOver</item>
         <item>1</item>
-        <item>1</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -1209,7 +1260,7 @@
         <item>> Return</item>
         <item>c2b2</item>
         <item>1</item>
-        <item>1</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -1222,7 +1273,7 @@
         <item>> Return</item>
         <item>c2b2</item>
         <item>1</item>
-        <item>1</item>
+        <item>knight_field</item>
         <item>Dialog</item>
     </string-array>
 
@@ -1261,9 +1312,11 @@
             <em>"HAHAHA! YOU ARE MORE FOOLISH THAN I THOUGHT."<br>
             </em><br>
             And at that moment, the dragon closes its mouth.<br>
+            <br>
+            <strong>-GAME OVER-</strong>
             ]]>
         </item>
-        <item>> GAME OVER</item>
+        <item>> Remember</item>
         <item>gameOver</item>
         <item>1</item>
         <item>dragon_lair</item>
@@ -1346,8 +1399,8 @@
             <strong>-E N D-</strong>
             ]]>
         </item>
-        <item>> Return to Start</item>
-        <item>a1</item>
+        <item>> Remember</item>
+        <item>a1_1</item>
         <item>1</item>
         <item>good_ending</item>
         <item>Ending</item>
@@ -1401,9 +1454,11 @@
             Listening to his cries, you lower your shield and attempt to approach him. But unfortunately, this made him even more paranoid, as you look very intimidating while holding a weapon.<br>
             <br>
             Raising his staff, he shoots a fast laser spell aimed towards your forehead before you could do anything, and all turned dark.<br>
+            <br>
+            <strong>-GAME OVER-</strong>
             ]]>
         </item>
-        <item>> GAME OVER</item>
+        <item>> Remember</item>
         <item>gameOver</item>
         <item>1</item>
         <item>priest_swamp</item>
@@ -1467,11 +1522,1100 @@
             <strong>-E N D-</strong>
             ]]>
         </item>
-        <item>> Return to Start</item>
-        <item>a1</item>
+        <item>> Remember</item>
+        <item>a1_1</item>
         <item>1</item>
         <item>good_ending</item>
         <item>Ending</item>
+    </string-array>
+
+    ////////////////////////////////////////////////////////////UNARMED PATH////////////////////////////////////////////////////////////
+
+    <string-array name="d1">
+        <item>
+            <![CDATA[
+            <em>"Oh? But not wielding a weapon means certain death. We can\'t have that"</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>> I know what I\'m doing</item>
+        <item>a5</item>
+        <item>d2</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Locked1</item>
+    </string-array>
+
+    <string-array name="d2">
+        <item>
+            <![CDATA[
+            <em>"Your…confidence is frightening. Are you planning something?"</em><br>
+            <br>
+            The Guardian inspects you top to bottom.<br>
+            <br>
+            <em>"That doesn\'t seem right…Very well, As long as the curses are confronted and killed, I will not question your methods"</em><br>
+            <br>
+            <em> "Are you sure you will go through with this?"</em>
+            ]]>
+        </item>
+        <item>> Yes</item>
+        <item>> No</item>
+        <item>d3</item>
+        <item>d1</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3">
+        <item>
+            <![CDATA[
+            <em>"Then I wish you the best of luck on your journey. The fate of this forest rests in your hands."<br>
+            </em><br>
+            The Guardian then heals your fatigue with a spell. She waves goodbye as you head towards the crossroads.<br>
+            <br>
+            Your memories of your past have begun to clear up, although some parts are still missing. You feel as if something is amiss with the Guardian<br>
+            <br>
+            Knowing this, you head out to find answers.
+            ]]>
+        </item>
+        <item>> The Witch of the North</item>
+        <item>> The Knight of the East</item>
+        <item>> The Dragon of the West</item>
+        <item>> The Priest of the South</item>
+        <item>d3a1</item>
+        <item>d3b1</item>
+        <item>d3c1</item>
+        <item>d3d1</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3a1">
+        <item>
+            <![CDATA[
+            You arrive at the north of the forest, where a curse lays. Beyond rests the ruins of a small village, nestled deep within the thick trees. At the edge is the remains of what seemed to be a church.<br>
+            <br>
+            You enter its dusty doors, and across the large hall sits a witch on her wicked throne.<br>
+            You approach slowly, and she stands and looks down on you.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>d3a2</item>
+        <item>1</item>
+        <item>witch_church</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3b1">
+        <item>
+            <![CDATA[
+            You arrive at the east of the forest, where the knight lays. As you enter you are met with a vast field of flowers. Though the sight is beautiful, you know that the pale white color of the petals is an effect of The Knight\'s presence here.<br>
+            <br>
+            In the distance, you see The Knight huddled underneath the tree in the middle of the area.<br>
+            You approach him, and from far away he notices you and turns around.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>d3b2</item>
+        <item>1</item>
+        <item>knight_field</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3c1">
+        <item>
+            <![CDATA[
+            You arrive at the west of the forest, where the dragon lays. The area is warm and mountainous, where snow and ice are found, instead you find fire and lava popping from the ground.<br>
+            <br>
+            You hear The Dragon\'s booming roar, and in the distance, a colossal figure rises from the horizon. Its head turns towards your direction, and it begins to fly.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>d3c2</item>
+        <item>1</item>
+        <item>dragon_lair</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3d1">
+        <item>
+            <![CDATA[
+            You arrive at the south of the forest, where the priest lays. Before you is a wet and damp swamp, with the effects of the curse changing the color of the water to an eerie purple.<br>
+            <br>
+            In front of you is an enclosure, where the beast-man priest with a lion\'s head stands in the middle. You approach The Priest cautiously, trying to grab his attention without startling him.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>d3d2</item>
+        <item>1</item>
+        <item>priest_swamp</item>
+        <item>Dialog</item>
+    </string-array>
+
+    //////////////////D3A1//////////////////
+
+    <string-array name="d3a2">
+        <item>
+            <![CDATA[
+            <em>"You… you seem familiar."<br>
+            </em><br>
+            The witch paces around the hall, making sure to keep distance from you. She raises her hand and prepares a spell against you.<br>
+            <br>
+            <em>"You stand before a sacred temple of the forest. Lying is forbidden, and punishment is absolute. Tell me: why are you here?" </em>
+            ]]>
+        </item>
+        <item>> I\'ve come for answers</item>
+        <item>d3a3</item>
+        <item>1</item>
+        <item>witch_church</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3a3">
+        <item>
+            <![CDATA[
+            She pauses, and after sensing no hostility in your words, she lowers her hand.<br>
+            <br>
+            <em>"…Speak."</em>
+            ]]>
+        </item>
+        <item>> What happened here?</item>
+        <item>> Do you know who I am?</item>
+        <item>> The Guardian…</item>
+        <item>> Did the forest will it so?</item>
+        <item>d3a3a1</item>
+        <item>d3a3b1</item>
+        <item>d3a3c1</item>
+        <item>d3a3d1</item>
+        <item>1</item>
+        <item>witch_church</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3a3a1">
+        <item>
+            <![CDATA[
+           <em>"A tragedy…the people here begun succumbing to the effects of the curse. I watched as everyone slowly lost their minds, they could no longer hear the cries of their forest.<br>
+            <br>
+            I had to put them down."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>d3a3</item>
+        <item>1</item>
+        <item>witch_church</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3a3b1">
+        <item>
+            <![CDATA[
+            <em>"I can\'t say I do. You feel like someone I know, though you\'re missing something."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>d3a3</item>
+        <item>1</item>
+        <item>witch_church</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3a3c1">
+        <item>
+            <![CDATA[
+            She looks away with a somber face.<br>
+            <br>
+            <em>"They are an old friend, though I do not remember much. I do remember them being too stubborn to work with others. They took the burden all to themselves."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>d3a3</item>
+        <item>1</item>
+        <item>witch_church</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3a3d1">
+        <item>
+            <![CDATA[
+            <em>"What do you…"<br>
+            </em><br>
+            She freezes, taken aback by your words. The Witch is very devoted to the forest, and now your words had began to plant seeds of doubt in her zeal.<br>
+            <br>
+            <em>"The curse was…there…I had to do something to save the forest…so it asked me to…"<br>
+            </em><br>
+            "No. I have faith in the calls of this forest. Your words are filled with malice, and I will punish you for it."
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>d3a3d2</item>
+        <item>1</item>
+        <item>witch_church</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3a3d2">
+        <item>
+            <![CDATA[
+            Her faith seemed to waver for a moment, but ultimately she pulled herself back together.<br>
+            <br>
+            The Witch begins to cast a spell. Numerous spears of magic begin to surround you in every direction. You attempt to defuse the situation and calm her down, but the damage to her heart has already been done.<br>
+            <br>
+            You\'ve heard enough from her. As you prepare to return, you take one last look in her sorrowful eyes, and see a face you swear you\'ve seen before.<br>
+            <br>
+            <strong>-GAME OVER-</strong>
+            ]]>
+        </item>
+        <item>> Remember</item>
+        <item>a1_2</item>
+        <item>1</item>
+        <item>good_ending</item>
+        <item>Ending</item>
+    </string-array>
+
+    //////////////////D3B1//////////////////
+
+    <string-array name="d3b2">
+        <item>
+            <![CDATA[
+            <em>"Familiar....presence...hee hee...have you finally come to play, friend?<br>
+            </em><br>
+            The wind blows as you get closer. The Knight not having moved an inch. Even from afar you can tell he has a massive grin on his face. But that grin disappears as he notices you are unarmed.<br>
+            <br>
+            <em>"No weapon? You are not my friend then, who are you?" </em>
+            ]]>
+        </item>
+        <item>> I\'ve come looking for answers</item>
+        <item>d3b3</item>
+        <item>1</item>
+        <item>knight_field</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3b3">
+        <item>
+            <![CDATA[
+            <em>"Hehe, I am no scholar, stranger…hehehe…but I will answer my best…as long as we get to play after."<br>
+            </em><br>
+            The Knight giggles, and turns around revealing his skinny features. They reflect to the two swords at his side.
+            ]]>
+        </item>
+        <item>> What happened here?</item>
+        <item>> Do you know who I am?</item>
+        <item>> The Guardian…</item>
+        <item>> Why do you like playing?</item>
+        <item>d3b3a1</item>
+        <item>d3b3b1</item>
+        <item>d3b3c1</item>
+        <item>d3b3d1</item>
+        <item>1</item>
+        <item>knight_field</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3b3a1">
+        <item>
+            <![CDATA[
+            <em>"Hahahaha…these fields….my favorite place. I come here whenever I want to play…hehehe….The flowers were not here before…they started to show after the curse,</em><br>
+            <br>
+            He bends down and picks a flower.<br>
+            <br>
+            <em> One always grows after someone visits me."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>d3b3</item>
+        <item>1</item>
+        <item>knight_field</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3b3b1">
+        <item>
+            <![CDATA[
+            <em>"Heheh, you look like someone…but you are not them…if you held a weapon, maybe i would recognize?"
+            </em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>d3b3</item>
+        <item>1</item>
+        <item>knight_field</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3b3c1">
+        <item>
+            <![CDATA[
+            <em>"Hahah....The Guardian is a good partner. They loved their sword and shield, never fighting without the other...very good with sword."<br>
+            </em><br>
+            He begins to laugh again.
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>d3b3</item>
+        <item>1</item>
+        <item>knight_field</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3b3d1">
+        <item>
+            <![CDATA[
+            The Knight scratches his head furiously<br>
+            <br>
+            <em>"No…nononono…too many \questions. I want to play, lets play!!"</em><br>
+            <br>
+            He begins to throw a tantrum. Your questions seem to have made his brain shut down. The Knight brandishes both of his swords, and points them at you."<br>
+            <br>
+            <em>"Play with me…PLAY WITH ME!!!!"</em>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>d3b3d2</item>
+        <item>1</item>
+        <item>knight_field</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3b3d2">
+        <item>
+            <![CDATA[
+            You attempt to calm The Knight down, But it proves futile as he is too focused on "playing" with you.<br>
+            <br>
+            Suddenly The Knight dashes in inhuman speeds towards you. He uses both of his swords to slash at your torso, not even giving you time to defend.<br>
+            <br>
+            <em>"That…easy? You are no fun, stranger….hahaha"<br>
+            </em><br>
+            The Knight says as he raises one of his swords at you.<br>
+            <br>
+            You\'ve heard enough from him. As you prepare to return, you take one last look in its wrathful eyes, and see a sight you swear you\'ve seen before.<br>
+            <br>
+            <strong>-GAME OVER-</strong>
+            ]]>
+        </item>
+        <item>> Remember</item>
+        <item>a1_2</item>
+        <item>1</item>
+        <item>good_ending</item>
+        <item>Ending</item>
+    </string-array>
+
+    //////////////////D3C1//////////////////
+
+    <string-array name="d3c2">
+        <item>
+           <![CDATA[
+            The Dragon lands a short distance in front of you, sending a shockwave of air as it touches the ground.<br>
+            <br>
+            It lowers its head to take a closer look at you. Its fiery, wrathful eyes looking at you like you are an insect.<br>
+            <br>
+            <em>"YOU…HAVE A FAMILIAR STENCH, STRANGER. YOUR PRESENCE DISTURBS MY WORK, WHY ARE YOU HERE?"<br>
+            </em><br>
+            Its booming voice rings in your ears, but you\'ve grown accustomed to it. You feel The Dragon\'s scales begin to warm up
+            ]]>
+        </item>
+        <item>> I\'ve come looking for answers</item>
+        <item>d3c3</item>
+        <item>1</item>
+        <item>dragon_lair</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3c3">
+        <item>
+            <![CDATA[
+            <em>"A CURIOUS MIND HAS WANDERED INTO MY COLD HOME. IT HAS BEEN A WHILE SINCE I HAD A VISITOR.<br>
+            <br>
+            I WILL ENTERTAIN YOU THIS ONCE. I CANNOT GUARANTEE YOU SATISFACTION."<br>
+            </em><br>
+            The Dragon then lowers its body to sit, and opens its wings wide. His presence exudes that of a king.
+            ]]>
+        </item>
+        <item>> What happened here?</item>
+        <item>> Do you know who I am?</item>
+        <item>> The Guardian…</item>
+        <item>> You say you are the Dragon of Ice, why do you breath fire?</item>
+        <item>d3c3a1</item>
+        <item>d3c3b1</item>
+        <item>d3c3c1</item>
+        <item>d3c3d1</item>
+        <item>1</item>
+        <item>dragon_lair</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3c3a1">
+        <item>
+            <![CDATA[
+            <em>"THERE WAS A CURSE. I AWAKENED ONE DAY TO DISCOVER MY HOME AND KINGDOM ABLAZE."<br>
+            </em><br>
+            Its scales and eyes begin to glow. Its voice causing the ground to rumble.<br>
+            <br>
+            "WE THOUGHT THE CURSE GONE AFTER THE RITUAL, BUT WE WERE FOOLS. NOW I AM HERE, IN PERPETUAL LABOR UNTIL I BREATHE MY LAST, COLD BREATH."
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>d3c3</item>
+        <item>1</item>
+        <item>dragon_lair</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3c3b1">
+        <item>
+            <![CDATA[
+            <em>"YOU ARE A MYSTERY. I KNOW OF YOUR SCENT BUT I DO NOT REMEMBER US MEETING BEFORE. YOU LOOK ARE FAMILIAR, HOWEVER."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>d3c3</item>
+        <item>1</item>
+        <item>1</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3c3c1">
+        <item>
+            <![CDATA[
+            "A FRIEND…ONE OF TWO PEOPLE THAT ARE ABLE TO BEST ME IN BATTLE, THE OTHER WAS A SWORDSMAN."<br>
+            <br>
+            Its voice calms down while reminiscing a hazy past.<br>
+            <br>
+            "EVERYTIME WE FOUGHT, IT WAS LIKE THEY KNEW WHAT I WOULD DO NEXT, LIKE THEY\'VE BEEN IN THAT MOMENT BEFORE. I DO NOT KNOW WHAT HAPPENED TO THEM AFTER OUR RITUAL"
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>d3c3</item>
+        <item>1</item>
+        <item>dragon_lair</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3c3d1">
+        <item>
+            <![CDATA[
+            The Dragon slams its fist to the ground, splitting it into fractures. Molten lava sprouts from the cracks.<br>
+            <br>
+            <em>"YOU DARE MOCK ME? ARE YOU BLIND? DO YOU WISH FOR DEATH?"</em><br>
+            <br>
+            Its eyes burn bright with rage. The scales around its body begin glowing a bright orange flame.<br>
+            <br>
+            <em>"I AM THE KING OF THESE MOUNTAINS. I WILL NOT TOLERATE SUCH AN INSULT."</em>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>d3c3d2</item>
+        <item>1</item>
+        <item>dragon_lair</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3c3d2">
+        <item>
+            <![CDATA[
+            The Dragon\'s mouth opens wide as a loud roar escapes its jaws. Fire appears soon after, causing the temperature to rise significantly.<br>
+            <br>
+            You attempt to correct your mistake, but The Dragon does not care to listen, for he is blinded by rage. It aims its mouth towards you, the inside glowing like the sun.<br>
+            <br>
+            You\'ve heard enough from it. As you prepare to return, you take one last look in its wrathful eyes, and see a sight you swear you\'ve seen before.<br>
+            <br>
+            <strong>-GAME OVER-</strong>
+            ]]>
+        </item>
+        <item>> Remember</item>
+        <item>a1_2</item>
+        <item>1</item>
+        <item>good_ending</item>
+        <item>Ending</item>
+    </string-array>
+
+    //////////////////D3D1//////////////////
+
+    <string-array name="d3d2">
+        <item>
+            <![CDATA[
+            He notices you, and while startled is he, The Priest seems to lower its guard when they face you.<br>
+            <br>
+            "Do I…know you? You are familiar…"<br>
+            <br>
+            His grip to his staff tightens, and he backs off slightly. The beast-man cautiously points his staff at you.<br>
+            <br>
+            "Why are you here, stranger?"
+            ]]>
+        </item>
+        <item>> I\'ve come looking for answers</item>
+        <item>d3d3</item>
+        <item>1</item>
+        <item>priest_swamp</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3d3">
+        <item>
+            <![CDATA[
+            <em>"…I see. You must\'ve survived and recently woke up. Though my memory is hazy, I will try my best to answer you."<br>
+            </em><br>
+            He lowers his staff and places it to his side. When The Priest does not cower in fear over the smallest presence, he begins to look like a true, prideful Beast-man
+            ]]>
+        </item>
+        <item>> What happened here?</item>
+        <item>> Do you know who I am?</item>
+        <item>> The Guardian…</item>
+        <item>> What is a priest doing in a place like this?</item>
+        <item>d3d3a1</item>
+        <item>d3d3b1</item>
+        <item>d3d3c1</item>
+        <item>d3d3d1</item>
+        <item>1</item>
+        <item>priest_swamp</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3d3a1">
+        <item>
+            <![CDATA[
+            <em>"The curse began to spread far into the forest. My people here became ill because of it. I tried to help them by healing, but it seems I only made it worse."<br>
+            </em><br>
+            His words tremble as he recounts his hazy memories.<br>
+            <br>
+            "I didn\'t want to hurt anyone. I only wanted to help."
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>d3d3</item>
+        <item>1</item>
+        <item>priest_swamp</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3d3b1">
+        <item>
+            <![CDATA[
+            <em>"You have a familiar air around you, but I do not remember you or us ever meeting. Is my mind playing tricks on me, or are you?"</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>d3d3</item>
+        <item>1</item>
+        <item>priest_swamp</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3d3c1">
+        <item>
+            <![CDATA[
+            "I…I remember them"<br>
+            <br>
+            <em>"They were one of the four others who were at the ceremony to the dispel the curse. We thought it was fine but something went wrong and it became stronger. I cannot recount what happens after however. I hope the others are doing fine."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>d3d3</item>
+        <item>1</item>
+        <item>priest_swamp</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3d3d1">
+        <item>
+            <![CDATA[
+            <em>"Like I said, I came here to…"<br>
+            </em><br>
+            The Beast-man pauses, his face slowly becoming frightened as he remembers fragments of the mysterious events that occurred.<br>
+            <br>
+            <em>"No…no…I…am a priest, why am I not helping them? Why did I not help?"<br>
+            </em><br>
+            He grabs his staff, magic swirling at its tip. The Priest begins to breath heavily, his proud stature no longer to be seen.<br>
+            <br>
+            <em>"Stay away! You must have come here knowing of my sins. I paid for my crimes through isolation. I refuse to die here!"</em>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>d3d3d2</item>
+        <item>1</item>
+        <item>priest_swamp</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="d3d3d2">
+        <item>
+            <![CDATA[
+            The Priest values his life more than his pride. As the humiliating sight of a cowering Beast-man in front of you readies a powerful spell, you attempt to calm him down. <br>
+            <br>
+            But your efforts prove useless, for his fear and desire to survive deafens him from your words.<br>
+            <br>
+            You\'ve heard enough from him. As you prepare to return, you take one last look in his lifeless eyes, and see a face you swear you\'ve seen before.<br>
+            <br>
+            <strong>-GAME OVER-</strong>
+            ]]>
+        </item>
+        <item>> Remember</item>
+        <item>a1_2</item>
+        <item>1</item>
+        <item>good_ending</item>
+        <item>Ending</item>
+    </string-array>
+
+    ////////////////////////////////////////////////////////////SWORD AND SHIELD PATH////////////////////////////////////////////////////////////
+
+    <string-array name="e1">
+        <item>
+            <![CDATA[
+            <em>"Oh, you\'re being greedy, I said you could only pick one. I need the other the moment you complete your task."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>> I remember</item>
+        <item>a5</item>
+        <item>e2</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Locked2</item>
+    </string-array>
+
+    <string-array name="e2">
+        <item>
+            <![CDATA[
+            The Guardian looks bewildered.<br>
+            <br>
+            <em>"What are you talking about? Time is of essence, cease this foolishness."</em><br>
+            <br>
+            She reaches out for the weapons, but you pull back.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>e3</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e3">
+        <item>
+            <![CDATA[
+            <em>"What is the meaning of this?"<br>
+            </em><br>
+            You grip the familiar weapons tightly. You look at The Guardian with a determination burning in your eyes.<br>
+            <br>
+            <em>"…I see, so it has come to this. I applaud you for coming this far. Allow me to reward you a final moment of clarity."</em>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>e4</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e4">
+        <item>
+            <![CDATA[
+            You remember those who bear the curse.
+            ]]>
+        </item>
+        <item>> The Witch weeps for a cause not of hers</item>
+        <item>> The Priest is fearful of their potential for destruction</item>
+        <item>> The Dragon is blinded by rage and confusion</item>
+        <item>> The Knight loses all but their insatiable thirst for battle</item>
+        <item>e4a1</item>
+        <item>e4b1</item>
+        <item>e4c1</item>
+        <item>e4d1</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Item</item>
+    </string-array>
+
+    <string-array name="e4a1">
+        <item>
+            <![CDATA[
+            <em>"The Sorceress? Hahaha…HAHAHAHAHA."</em><br>
+            <br>
+            The guardian suddenly bursts into laughter, her voice warping.<br>
+            <br>
+            <em>"In the first plague, the people did lose their minds. I spoke to that sorceress as the "forest", speaking of an unavoidable outcome."</em><br>
+            <br>
+            Her aura changes to a dark air.<br>
+            <br>
+            <em>"The massacre that occurred thereafter was a sight to see."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>e5</item>
+        <item>1</item>
+        <item>witch_church</item>
+        <item>e4</item>
+        <item>Restricted</item>
+    </string-array>
+
+    <string-array name="e4b1">
+        <item>
+            <![CDATA[
+            <em>"The hunter, beast of pale petals. Knight of knights. Bearer of many names."</em><br>
+            <br>
+            The Guardian\'s eyes turn bright. Magic swirls around her.<br>
+            <br>
+            <em>"Noble his cause, but foolish is he. Gathered the affected, all he could. In an act of mercy, soaked the vibrant plains in blood, bleaching its flowers."</em><br>
+            <br>
+            Runes begin appearing in her now wrinkled skin.<br>
+            <br>
+            <em>"Like a true warrior, all he could think of was violence and bloodshed."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>e5</item>
+        <item>1</item>
+        <item>knight_field</item>
+        <item>e4</item>
+        <item>Restricted</item>
+    </string-array>
+
+    <string-array name="e4c1">
+        <item>
+            <![CDATA[
+            <em>"The Dragon King of the mountains. Prideful they may be but still are they of royalty."</em><br>
+            <br>
+            The Guardian sneers at the thought.<br>
+            <br>
+            <em>"As the plague spread, the King eliminated all who bore its marks to prevent the spread. Many fell to the judgement of the plague and the Dragon, one after another."<br>
+            </em><br>
+            Her elegant robes begin to turn into bat-like wings.<br>
+            <br>
+            "The King was no exception, and with their ice turned flame, burnt its kingdom to ashes."
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>e5</item>
+        <item>1</item>
+        <item>dragon_lair</item>
+        <item>e4</item>
+        <item>Restricted</item>
+    </string-array>
+
+    <string-array name="e4d1">
+        <item>
+            <![CDATA[
+            <em>"The Beast Shaman…a true coward."</em><br>
+            <br>
+            The Guardian\'s hands transform into a grotesque figure.<br>
+            <br>
+            <em>"Afraid of confronting it headfirst, the Shaman turned to the water wells in hopes of creating a panacea for the people."</em><br>
+            <br>
+            The nails on her fingers grow in length, turning into razor sharp claws.<br>
+            <br>
+            <em>"Medicine and poison are two sides of the same coin. A lot can change with a simple stumble in words."</em>
+            ]]>
+        </item>
+        <item>> Return</item>
+        <item>e5</item>
+        <item>1</item>
+        <item>priest_swamp</item>
+        <item>e4</item>
+        <item>Restricted</item>
+    </string-array>
+
+    <string-array name="e5">
+        <item>
+            <![CDATA[
+            You remember those who bear the curse.
+            ]]>
+        </item>
+        <item>> The Guardian bears witness to their punishments</item>
+        <item>e6</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e6">
+        <item>
+            <![CDATA[
+            <em>"To alleviate the effects, and to atone for their mistakes. The Guardian gathered the four including themselves. At the cost of punishment, they sealed me off and cursed themselves further."</em><br>
+            <br>
+            The Guardian…no…The Curse begins to hover above the ground. What was once a graceful and beautiful sight, is now a horrid monster, an avatar of evil.<br>
+            <br>
+            <em>"The Sorceress feels the despair of her victims. The Shaman constantly relives his most dreadful moment. The King becomes blind and bathed in their own flames. The Hunter loses their honor, and becomes a monster."</em>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>e7</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e7">
+        <item>
+            <![CDATA[
+            <em>"And The Guardian…while everyone\'s memory\'s partially removed, was to completely forget everything they knew."<br>
+            </em><br>
+            The Curse brandishes her claws. Their sharpness rings in your ear.<br>
+            <br>
+            <em>"Fortunately, a seal cannot hold me forever. Once I had freed myself momentarily I planned to impersonate your former self and trick you to killing them off so that the seal may be fully broken and my influence spread once more."<br>
+            </em><br>
+            <em>"It seem I was mistaken to think I could let you live. I should have ended you when you were weak, before you could learn to remember again. How many times have we spoken since you first awoke?"</em>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>e8</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e8">
+        <item>
+            <![CDATA[
+            <em>"No matter, it\'s all the same."<br>
+            </em><br>
+            Her markings on the skin look like tree roots. They begin to glow as she prepares a spell.<br>
+            <br>
+            <em>"One of us will fall here regardless. If not me, then be it so, your eternity shall be spent here. Your punishment, your curse begins now, Guardian!"</em><br>
+            <br>
+            You brandish your sword, and ready your shield. Something is amiss, and now you confront it.
+            ]]>
+        </item>
+        <item>> Interrupt her spell [Attack]</item>
+        <item>> Block her spell [Defend]</item>
+        <item>e9_1</item>
+        <item>e9_2</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e9_1">
+        <item>
+            <![CDATA[
+            The Curse recites her incantations, but before she could finish, you lunge forth and bash her with your shield. She plummets to the ground, stunned slightly.<br>
+            <br>
+            You take this opportunity to slash one of her wings off, but she manages to get back up in time.<br>
+            <br>
+            <em>"Insolent thing! Perish!"<br>
+            </em><br>
+            The Curse puts her hands together and a dark ball appears.
+            ]]>
+        </item>
+        <item>> Cut the projectile [Attack]</item>
+        <item>> Raise your shield [Defend]</item>
+        <item>e10_1</item>
+        <item>e10_2</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e9_2">
+        <item>
+            <![CDATA[
+            The Curse recites her incantations. You raise your shield and plant your feet to the ground, preparing for her attack.<br>
+            <br>
+            She launches her magic. Several needles of mana fly towards your direction. As they approach your shield, they take a sudden curve, and hit you on your sides.<br>
+            <br>
+            The needles pierce your body, and as they enter they immediately grow in size, impaling you in the process.<br>
+            <br>
+            <em>"And so it ends here…" </em>The Curse mutters.<br>
+            <br>
+            But it\'s not over yet. Remember this.<br>
+            <br>
+            <strong>-GAME OVER-</strong>
+            ]]>
+        </item>
+        <item>> Remember</item>
+        <item>e8</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e10_1">
+        <item>
+            <![CDATA[
+            You ready your sword and dash towards The Curse. She does a throwing motion with the ball, but the ball stops midway her action. Her hand then comes back and touches it, launching a massive beam at you. <br>
+            <br>
+            Unable to block in time, you are engulfed in a dark pulse.<br>
+            <br>
+            <em>"And so it ends here…" </em>The Curse mutters.<br>
+            <br>
+            But it\'s not over yet. Remember this.<br>
+            <br>
+            <strong>-GAME OVER-</strong>
+            ]]>
+        </item>
+        <item>> Remember</item>
+        <item>e8</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e10_2">
+        <item>
+            <![CDATA[
+            You ready your shield and place it in front of you. The Curse does a throwing motion with the ball, but the ball stops midway her action. Her hand then comes back and touches it, launching a massive beam at you. <br>
+            <br>
+            The dark beam touches your shield, and it begins to absorb every bit of energy from it. The shield begins to feel heavier.<br>
+            <br>
+            <em>"You can\'t hold on forever!"<br>
+            </em><br>
+            She raises her claws.
+            ]]>
+        </item>
+        <item>> Parry and Advance [Attack]</item>
+        <item>> Parry and Counter [Defend]</item>
+        <item>e11_1</item>
+        <item>e11_2</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e11_1">
+        <item>
+            <![CDATA[
+            The Curse bares her claws, and in a swift motion, lunges to you and slashes. You begin to parry her relentless attacks with your sword, and using this opportunity to move forward back her into a corner.<br>
+            <br>
+            Unfortunately, your movement is hindered by your heavy shield, and your strength can no longer keep up with her movements. She eventually breaks your guard, and slices you into pieces<br>
+            <br>
+            <em>"And so it ends here…" </em>The Curse mutters.<br>
+            <br>
+            But it\'s not over yet. Remember this.<br>
+            <br>
+            <strong>-GAME OVER-</strong>
+            ]]>
+        </item>
+        <item>> Remember</item>
+        <item>e8</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e11_2">
+        <item>
+            <![CDATA[
+            The Curse bares her claws, and in a swift motion, lunges to you and slashes. You begin to parry her relentless attacks with your sword, driving her back while keeping yourself firmly planted to the ground.<br>
+            <br>
+            She eventually breaks your guard due to your heavy shield and hindered speed. But as she clashes her claws with your blade, you place the shield in front of her, and release the absorbed magic inside.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>e11_3</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e11_3">
+        <item>
+            <![CDATA[
+            The Curse falls to the ground once more, Her wings beaten and tattered. She moves for one final stand.<br>
+            <br>
+            <em>"Ngh…You are powerful, I will admit, but I refuse to fall here."<br>
+            </em><br>
+            She raises her claws once more, this time glowing bright. Your sword glows bright as well, and as magic swirls around both your weapons, she dashes.
+            ]]>
+        </item>
+        <item>> Slash [Attack]</item>
+        <item>> Block [Defend]</item>
+        <item>e12_1</item>
+        <item>e12_2</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e12_1">
+        <item>
+            <![CDATA[
+            You decide to meet her final attack.<br>
+            <br>
+            With a determined heart, you raise your sword once more, preparing to clash with her strengthened claws.<br>
+            <br>
+            And when they finally connect, your sword cuts through her glowing claws in half, leaving a bright, burning trail.<br>
+            <br>
+            The Curse trips as you break her guard. You point your blade to her neck and mark the end of this duel.<br>
+            <br>
+            <em>"Haha…and so it ends here…" </em>
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>e13</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e12_2">
+        <item>
+            <![CDATA[
+            You decide to block her final attack.<br>
+            <br>
+            With a determined heart, you raise your shield once more, preparing to meet with her strengthened claws.<br>
+            <br>
+            And when they finally connect, the shield shatters at the weight and impact, weakened by its earlier absorption.<br>
+            <br>
+            <em>"And so it ends here…" </em>The Curse mutters, as she digs her claws deep into your body.<br>
+            <br>
+            But it\'s not over yet. Remember this.<br>
+            <br>
+            <strong>-GAME OVER-</strong>
+            ]]>
+        </item>
+        <item>> Remember</item>
+        <item>e8</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e13">
+        <item>
+            <![CDATA[
+            You look at the fallen thing with contempt. Her voice weakens with every breath.<br>
+            <br>
+            <em>"I congratulate you…you\'ve done your duty well."<br>
+            </em><br>
+            <em>"But before you end me, know this…I was born from nature itself. I am a necessary conflict…and no matter what you do…another will always take my place."<br>
+            </em><br>
+            You raise your hand, preparing to slice her head off.<br>
+            <br>
+            <em>"Like how you return from your experiences, I will return in another time…this is my final curse to you…"</em><br>
+            <br>
+            And in a swift motion, you slice her neck, clean off.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>e14</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="e14">
+        <item>
+            <![CDATA[
+            The Curse has been defeated, and the forest now returned to its former state.<br>
+            <br>
+            Your friends have also returned to normal, but the scars left by the curse and their punishments will never go away.<br>
+            <br>
+            You think back to The Curse\'s final words, and with your lessons learned, you prepare to rebuild the Forest into one that resists the evil grasps of The Curse and its plague.<br>
+            <br>
+            The sky is bright, and though damage has been done, no longer is anything amiss.<br>
+            <br>
+            All is truly well.<br>
+            <br>
+            <strong>-TRUE END-</strong>
+            ]]>
+        </item>
+        <item>> Start Again</item>
+        <item>gameOver</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Reset</item>
     </string-array>
 
 </resources>

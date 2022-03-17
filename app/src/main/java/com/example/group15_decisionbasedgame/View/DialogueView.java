@@ -78,7 +78,7 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
         //Initialize class
         dc = new DialogueController(this);
         //Gets the default text
-        dc.firstScene(getResources().getStringArray(R.array.a1));
+        dc.firstScene(getResources().getStringArray(R.array.gameOver));
         //Shows the text
         dc.changeScene(0);
     }

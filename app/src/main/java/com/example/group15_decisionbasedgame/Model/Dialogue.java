@@ -1,6 +1,9 @@
 package com.example.group15_decisionbasedgame.Model;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.content.SharedPreferences;
+import android.util.Log;
 
 public class Dialogue {
     private final SharedPreferences sp;
@@ -31,59 +34,68 @@ public class Dialogue {
     private boolean witchEnd,knightEnd,dragonEnd,priestEnd;
     //Number of choices a Scenario will offer
     private int numOfChoice;
+    //Number of buttons to show
+    private int buttonNum;
     //Number of clicks to skip text animation
     private int textSkip;
     //Which item was picked //TODO: could be made better for a more dynamic approach
     public int getItemState() {return sp.getInt("ItemState", 0);} //Which item was picked
     private int item;
-    boolean failed,restricted;
+    boolean failed,restricted,locked;
     private int popOutText;
     //Text Delay
     boolean allowDelay = true;
 
     public void sceneCheck(int state) {
         buttonState = state;
-        if (buttonState == 0) {
-            //Runs if no choices has been made
-            arrayCheck();
-        } else if (restricted) {
+        if (restricted) {
             restricted = false;
             restricted();
         } else {
             arrayCheck();
-            lastItem = txt.length - 1;
-            String check = txt[lastItem];
-            switch (check) {
-                case "Dialog":
-                    break;
-                case "Restricted":
-                    restricted = true;
-                    textLength -=1; //Done as the Restricted Array has 1 more item than the rest
-                    break;
-                case "Item":
-                    item = 2;
-                    break;
-                case "Ending":
-                    ending = choice;
-                    ending();
-                    break;
-            }
         }
     }
 
-    public void arrayCheck() {
+    private void arrayCheck() {
         //checks if the scenario is now restricted
         if (buttonState != 0 && !failed) {
             choice = txt[numOfChoice + buttonState];
         } else if (failed) {
             choice = txt[lastItem - 1];
-            textLength = txt.length;
             failed = false;
         }
     }
 
-    public void textChange() {
+    private void caseCheck() {
         textLength = txt.length;
+        lastItem = txt.length - 1;
+        String check = txt[lastItem].replaceAll("[^a-zA-Z]","");
+        switch (check) {
+            case "Dialog":
+                //Doing nothing special for now
+                break;
+            case "Restricted":
+                restricted = true;
+                textLength -=1; //Done as the Restricted Array has 1 more item than the rest
+                break;
+            case "Item":
+                item = 2;
+                break;
+            case "Ending":
+                ending = choice;
+                ending();
+                break;
+            case "Locked":
+                locked = true;
+                break;
+            case "Reset":
+                Reset();
+                break;
+        }
+    }
+
+    public void textChange() {
+        caseCheck();
         //Checks if delay is to be applied
         if (allowDelay) {
             delay = txt[0].length() * delayMult;
@@ -91,12 +103,16 @@ public class Dialogue {
         //Checks how many choices in that particular scene are
         if (textLength == choice4){ //for 4 choices scenario
             numOfChoice = 4;
+            buttonNum = 4;
         } else if (textLength == choice3) { //for 3 choice scenario
             numOfChoice = 3;
+            buttonNum = 3;
         } else if (textLength == choice2) { // for 2 choice scenario
             numOfChoice = 2;
+            buttonNum = 2;
         } else if (textLength == choice1) { // for 1 choice scenario
             numOfChoice = 1;
+            buttonNum = 1;
         }
         //Checks the item state
         if (item > 1) {
@@ -107,32 +123,34 @@ public class Dialogue {
             editor.apply();
             item--;
         }
-    }
-
-    public void restricted() {
-        //Checks if the first choice was pressed
-        if (buttonState == 1) {
-            //Checks if the user got an item
-            if (getItemState() > 0) {
-                //Checks if the correct item was retrieved
-                if (getItemState() == 2) {
-                    failed = false;
-                } else {
-                    popOutText = 1;
-                    failed = true;
-                }
-            } else {
-                popOutText = 2;
-                failed = true;
-            }
-            arrayCheck();
+        if (locked){
+            locked();
+            locked = false;
         }
     }
 
-    public void ending() {
+    private void restricted() {
+        editor = sp.edit();
+        editor.putBoolean(String.valueOf(sp.getInt("ItemState", 0)),true);
+        editor.apply();
+        if(!lock3()) {
+            failed = true;
+        } else {
+            editor = sp.edit();
+            editor.putBoolean("1" ,false);
+            editor.putBoolean("2" ,false);
+            editor.putBoolean("3" ,false);
+            editor.putBoolean("4" ,false);
+            editor.apply();
+        }
+        arrayCheck();
+    }
+
+    private void ending() {
         //Checks which ending was activated
+        Log.d(TAG, "ending: " + choice);
         switch (ending) {
-            case "b2a2b2":
+            case "b2a2b3":
                 editor = sp.edit();
                 editor.putBoolean("WitchEnd" ,true);
                 editor.apply();
@@ -142,17 +160,81 @@ public class Dialogue {
                 editor.putBoolean("KnightEnd" ,true);
                 editor.apply();
                 break;
-            case "c2c2b2":
+            case "c2c2b3":
                 editor = sp.edit();
                 editor.putBoolean("DragonEnd" ,true);
                 editor.apply();
                 break;
-            case "c2d2a2":
+            case "c2d2a3":
                 editor = sp.edit();
                 editor.putBoolean("PriestEnd" ,true);
                 editor.apply();
                 break;
+            case "d3a3d2":
+                editor = sp.edit();
+                editor.putBoolean("WitchEndPacifist" ,true);
+                editor.apply();
+                break;
+            case "d3b3d2":
+                editor = sp.edit();
+                editor.putBoolean("KnightEndPacifist" ,true);
+                editor.apply();
+                break;
+            case "d3c3d2":
+                editor = sp.edit();
+                editor.putBoolean("DragonEndPacifist" ,true);
+                editor.apply();
+                break;
+            case "d3d3d2":
+                editor = sp.edit();
+                editor.putBoolean("PriestEndPacifist" ,true);
+                editor.apply();
+                break;
         }
+    }
+
+    private boolean lock1() {
+        return sp.getBoolean("WitchEnd" ,false) && sp.getBoolean("KnightEnd" ,false)
+                && sp.getBoolean("DragonEnd" ,false) && sp.getBoolean("PriestEnd" ,false);
+    }
+
+    private boolean lock2() {
+        return sp.getBoolean("WitchEndPacifist" ,false) && sp.getBoolean("KnightEndPacifist" ,false)
+                && sp.getBoolean("DragonEndPacifist" ,false) && sp.getBoolean("PriestEndPacifist" ,false);
+    }
+
+    private boolean lock3() {
+        return sp.getBoolean("1" ,false) && sp.getBoolean("2" ,false)
+                && sp.getBoolean("3" ,false) && sp.getBoolean("4" ,false);
+    }
+
+    private void locked() {
+       if (choice != null) {
+            String a = txt[lastItem].replaceAll("[^0-9]", "");
+            int b = Integer.parseInt(a);
+            Log.d(TAG, "locked: " + b);
+            if (b == 2) {
+                //Sword and Shield route open
+                if (!lock2()) {
+                    Log.d(TAG, "locked:1 " + sp.getBoolean("WitchEndPacifist" ,false));
+                    Log.d(TAG, "locked:2 " + sp.getBoolean("KnightEndPacifist" ,false));
+                    Log.d(TAG, "locked:3 " + sp.getBoolean("DragonEndPacifist" ,false));
+                    Log.d(TAG, "locked:4 " + sp.getBoolean("PriestEndPacifist" ,false));
+                    buttonNum = 1;
+                } //if true, show text
+            } else if (b == 1) {
+                //Unarmed route open
+                if (!lock1()) {
+                    Log.d(TAG, "locked:1 " + sp.getBoolean("WitchEnd" ,false));
+                    Log.d(TAG, "locked:2 " + sp.getBoolean("KnightEnd" ,false));
+                    Log.d(TAG, "locked:3 " + sp.getBoolean("DragonEnd" ,false));
+                    Log.d(TAG, "locked:4 " + sp.getBoolean("PriestEnd" ,false));
+                    buttonNum = 1;
+                } //if true, show text
+            }
+        } else {
+           buttonNum = 1;
+       }
     }
 
     public void Save() {
@@ -171,6 +253,14 @@ public class Dialogue {
         editor.putBoolean("KnightEnd" ,false);
         editor.putBoolean("DragonEnd" ,false);
         editor.putBoolean("PriestEnd" ,false);
+        editor.putBoolean("WitchEndPacifist" ,false);
+        editor.putBoolean("KnightEndPacifist" ,false);
+        editor.putBoolean("DragonEndPacifist" ,false);
+        editor.putBoolean("PriestEndPacifist" ,false);
+        editor.putBoolean("1" ,false);
+        editor.putBoolean("2" ,false);
+        editor.putBoolean("3" ,false);
+        editor.putBoolean("4" ,false);
         editor.apply();
     }
 
@@ -180,7 +270,7 @@ public class Dialogue {
     public String getChoice() {return choice;}
     public String getBackNum() {return this.txt[txt.length - 2];}
     public int getDelay() {return delay;}
-    public int getNumOfChoice() {return numOfChoice;}
+    public int getButtonNum() {return buttonNum;}
     public int getTextSkip() {return textSkip;}
     public int getPopOutText() {return popOutText;}
     public boolean isFailed() {return failed;}

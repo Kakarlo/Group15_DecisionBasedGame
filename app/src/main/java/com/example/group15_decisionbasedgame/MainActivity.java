@@ -397,7 +397,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Objects.requireNonNull(getSupportActionBar()).hide();
-        setContentView(R.layout.dialogue);
+        //setContentView(R.layout.dialogue);
 
 
         //Button call
@@ -437,7 +437,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //String [] call
         defText = getResources().getStringArray(R.array.default_text);
         //Sets the default text
-        text = getResources().getStringArray(R.array.a1);
+        text = getResources().getStringArray(R.array.gameOver);
 
         //Sets the choice number
         choice4 = defText.length;

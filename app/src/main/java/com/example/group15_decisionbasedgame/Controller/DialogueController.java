@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -108,13 +106,13 @@ public class DialogueController {
     public void resume() {m.resumeMusic();m.toggle();reset();}
 
     private void textChange() {
-        if (d.getNumOfChoice() == 4){ //for 4 choices scenario
+        if (d.getButtonNum() == 4){ //for 4 choices scenario
             choices4();
-        } else if (d.getNumOfChoice() == 3) { //for 3 choice scenario
+        } else if (d.getButtonNum() == 3) { //for 3 choice scenario
             choices3();
-        } else if (d.getNumOfChoice() == 2) { // for 2 choice scenario
+        } else if (d.getButtonNum() == 2) { // for 2 choice scenario
             choices2();
-        } else if (d.getNumOfChoice() == 1) { // for 1 choice scenario
+        } else if (d.getButtonNum() == 1) { // for 1 choice scenario
             choices1();
         }
     }
