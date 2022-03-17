@@ -268,6 +268,7 @@ public class Dialogue {
     }
 
     public void Reset() {
+        choice = null;
         editor = sp.edit();
         editor.putString("textID", "null");
         editor.putInt("ItemState" ,0);

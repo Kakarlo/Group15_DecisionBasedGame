@@ -1808,7 +1808,7 @@
         <item>a1_2</item>
         <item>1</item>
         <item>introduction</item>
-        <item>gameOver</item>
+        <item>a1_1</item>
         <item>Restricted2</item>
     </string-array>
 
@@ -1937,7 +1937,7 @@
         <item>a1_2</item>
         <item>1</item>
         <item>introduction</item>
-        <item>gameOver</item>
+        <item>a1_1</item>
         <item>Restricted2</item>
     </string-array>
 
@@ -2067,7 +2067,7 @@
         <item>a1_2</item>
         <item>1</item>
         <item>introduction</item>
-        <item>gameOver</item>
+        <item>a1_1</item>
         <item>Restricted2</item>
     </string-array>
 
@@ -2195,7 +2195,7 @@
         <item>a1_2</item>
         <item>1</item>
         <item>introduction</item>
-        <item>gameOver</item>
+        <item>a1_1</item>
         <item>Restricted2</item>
     </string-array>
 
@@ -2257,9 +2257,9 @@
             ]]>
         </item>
         <item>> The Witch weeps for a cause not of hers</item>
-        <item>> The Priest is fearful of their potential for destruction</item>
-        <item>> The Dragon is blinded by rage and confusion</item>
         <item>> The Knight loses all but their insatiable thirst for battle</item>
+        <item>> The Dragon is blinded by rage and confusion</item>
+        <item>> The Priest is fearful of their potential for destruction</item>
         <item>e4a1</item>
         <item>e4b1</item>
         <item>e4c1</item>
