@@ -61,18 +61,23 @@ public class DialogueController {
     }
 
     public void changeScene(int state) {
-        //Clears animation
-        hideButton();
-        clearAnim();
-        d.sceneCheck(state);
-        getStringArr();
-        d.textChange();
-        textChange();
-        backgroundChange();
-        if (d.isFailed()){
-            popOutText(d.getPopOutText());
+        if (d.isEnded()) {
+            d.setEnded(false);
+            dv.mainMenu();
         } else {
-            popOut();
+            //Clears animation
+            hideButton();
+            clearAnim();
+            d.sceneCheck(state);
+            getStringArr();
+            d.textChange();
+            textChange();
+            backgroundChange();
+            if (d.isFailed()) {
+                popOutText(d.getPopOutText());
+            } else {
+                popOut();
+            }
         }
     }
 

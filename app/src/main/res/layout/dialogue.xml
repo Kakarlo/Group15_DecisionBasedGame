@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background2" />
+        app:srcCompat="@drawable/background2"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/textBox"
@@ -37,6 +37,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
+            android:textColor="@color/grey"
             android:id="@+id/txtBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

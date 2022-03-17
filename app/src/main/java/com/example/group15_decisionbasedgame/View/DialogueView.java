@@ -133,4 +133,9 @@ public class DialogueView extends AppCompatActivity implements View.OnClickListe
         super.onDestroy();
         dc.stop();
     }
+
+    public void mainMenu() {
+        Intent intent = new Intent(this, Menu.class);
+        startActivity(intent);
+    }
 }

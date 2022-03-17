@@ -315,7 +315,39 @@
             ]]>
         </item>
         <item>> Continue</item>
-        <item>a2</item>
+        <item>a1_3</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="a1_3">
+        <item>
+            <![CDATA[
+            You walk. The atmosphere around is eerily silent.<br>
+            <br>
+            The silence is interrupted by a voice in the distance. It seems the Guardian is calling out to you once more.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>a1_4</item>
+        <item>1</item>
+        <item>introduction</item>
+        <item>Dialog</item>
+    </string-array>
+
+    <string-array name="a1_4">
+        <item>
+            <![CDATA[
+            You move towards the Guardian, and you start to see her in the distance.<br>
+            <br>
+            <em>"Oh thank heavens a survivor! Quickly, there is no time to waste! I will explain on the way."</em><br>
+            <br>
+            She proceeds with her speech once again. You already know full well the effects of the curse in these lands and its people, but you let her proceed anyway as to not incite suspicion.
+            ]]>
+        </item>
+        <item>> Continue</item>
+        <item>a4</item>
         <item>1</item>
         <item>introduction</item>
         <item>Dialog</item>
@@ -591,7 +623,7 @@
         <item>b2a2b3</item>
         <item>1</item>
         <item>witch_church</item>
-        <item>Dialog</item>
+        <item>Ending</item>
     </string-array>
 
     <string-array name="b2a2c1">
@@ -639,8 +671,9 @@
         <item>> Remember</item>
         <item>a1_1</item>
         <item>1</item>
-        <item>good_ending</item>
-        <item>Ending</item>
+        <item>introduction</item>
+        <item>gameOver</item>
+        <item>Restricted1</item>
     </string-array>
 
     //////////////////B2B1//////////////////
@@ -688,7 +721,7 @@
         <item>b2b2a2</item>
         <item>1</item>
         <item>knight_field</item>
-        <item>Dialog</item>
+        <item>Ending</item>
     </string-array>
 
     <string-array name="b2b2b1">
@@ -772,8 +805,9 @@
         <item>> Remember</item>
         <item>a1_1</item>
         <item>1</item>
-        <item>good_ending</item>
-        <item>Ending</item>
+        <item>introduction</item>
+        <item>gameOver</item>
+        <item>Restricted1</item>
     </string-array>
 
     //////////////////B2C1//////////////////
@@ -1384,7 +1418,7 @@
         <item>c2c2b3</item>
         <item>1</item>
         <item>dragon_lair</item>
-        <item>Dialog</item>
+        <item>Ending</item>
     </string-array>
 
     <string-array name="c2c2b3">
@@ -1402,8 +1436,9 @@
         <item>> Remember</item>
         <item>a1_1</item>
         <item>1</item>
-        <item>good_ending</item>
-        <item>Ending</item>
+        <item>introduction</item>
+        <item>gameOver</item>
+        <item>Restricted1</item>
     </string-array>
 
     //////////////////C2D1//////////////////
@@ -1509,7 +1544,7 @@
         <item>c2d2a3</item>
         <item>1</item>
         <item>priest_swamp</item>
-        <item>Dialog</item>
+        <item>Ending</item>
     </string-array>
 
     <string-array name="c2d2a3">
@@ -1525,8 +1560,9 @@
         <item>> Remember</item>
         <item>a1_1</item>
         <item>1</item>
-        <item>good_ending</item>
-        <item>Ending</item>
+        <item>introduction</item>
+        <item>gameOver</item>
+        <item>Restricted1</item>
     </string-array>
 
     ////////////////////////////////////////////////////////////UNARMED PATH////////////////////////////////////////////////////////////
@@ -1753,7 +1789,7 @@
         <item>d3a3d2</item>
         <item>1</item>
         <item>witch_church</item>
-        <item>Dialog</item>
+        <item>Ending</item>
     </string-array>
 
     <string-array name="d3a3d2">
@@ -1771,8 +1807,9 @@
         <item>> Remember</item>
         <item>a1_2</item>
         <item>1</item>
-        <item>good_ending</item>
-        <item>Ending</item>
+        <item>introduction</item>
+        <item>gameOver</item>
+        <item>Restricted2</item>
     </string-array>
 
     //////////////////D3B1//////////////////
@@ -1877,7 +1914,7 @@
         <item>d3b3d2</item>
         <item>1</item>
         <item>knight_field</item>
-        <item>Dialog</item>
+        <item>Ending</item>
     </string-array>
 
     <string-array name="d3b3d2">
@@ -1899,8 +1936,9 @@
         <item>> Remember</item>
         <item>a1_2</item>
         <item>1</item>
-        <item>good_ending</item>
-        <item>Ending</item>
+        <item>introduction</item>
+        <item>gameOver</item>
+        <item>Restricted2</item>
     </string-array>
 
     //////////////////D3C1//////////////////
@@ -2010,7 +2048,7 @@
         <item>d3c3d2</item>
         <item>1</item>
         <item>dragon_lair</item>
-        <item>Dialog</item>
+        <item>Ending</item>
     </string-array>
 
     <string-array name="d3c3d2">
@@ -2028,8 +2066,9 @@
         <item>> Remember</item>
         <item>a1_2</item>
         <item>1</item>
-        <item>good_ending</item>
-        <item>Ending</item>
+        <item>introduction</item>
+        <item>gameOver</item>
+        <item>Restricted2</item>
     </string-array>
 
     //////////////////D3D1//////////////////
@@ -2137,7 +2176,7 @@
         <item>d3d3d2</item>
         <item>1</item>
         <item>priest_swamp</item>
-        <item>Dialog</item>
+        <item>Ending</item>
     </string-array>
 
     <string-array name="d3d3d2">
@@ -2155,8 +2194,9 @@
         <item>> Remember</item>
         <item>a1_2</item>
         <item>1</item>
-        <item>good_ending</item>
-        <item>Ending</item>
+        <item>introduction</item>
+        <item>gameOver</item>
+        <item>Restricted2</item>
     </string-array>
 
     ////////////////////////////////////////////////////////////SWORD AND SHIELD PATH////////////////////////////////////////////////////////////
@@ -2248,7 +2288,7 @@
         <item>1</item>
         <item>witch_church</item>
         <item>e4</item>
-        <item>Restricted</item>
+        <item>Restricted3</item>
     </string-array>
 
     <string-array name="e4b1">
@@ -2270,7 +2310,7 @@
         <item>1</item>
         <item>knight_field</item>
         <item>e4</item>
-        <item>Restricted</item>
+        <item>Restricted3</item>
     </string-array>
 
     <string-array name="e4c1">
@@ -2292,7 +2332,7 @@
         <item>1</item>
         <item>dragon_lair</item>
         <item>e4</item>
-        <item>Restricted</item>
+        <item>Restricted3</item>
     </string-array>
 
     <string-array name="e4d1">
@@ -2314,7 +2354,7 @@
         <item>1</item>
         <item>priest_swamp</item>
         <item>e4</item>
-        <item>Restricted</item>
+        <item>Restricted3</item>
     </string-array>
 
     <string-array name="e5">
@@ -2614,7 +2654,7 @@
         <item>> Start Again</item>
         <item>gameOver</item>
         <item>1</item>
-        <item>introduction</item>
+        <item>good_ending</item>
         <item>Reset</item>
     </string-array>
 

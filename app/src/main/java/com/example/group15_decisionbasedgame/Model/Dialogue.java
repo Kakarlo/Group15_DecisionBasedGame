@@ -41,7 +41,7 @@ public class Dialogue {
     //Which item was picked //TODO: could be made better for a more dynamic approach
     public int getItemState() {return sp.getInt("ItemState", 0);} //Which item was picked
     private int item;
-    boolean failed,restricted,locked;
+    boolean failed,restricted,locked,ended;
     private int popOutText;
     //Text Delay
     boolean allowDelay = true;
@@ -89,6 +89,7 @@ public class Dialogue {
                 locked = true;
                 break;
             case "Reset":
+                ended = true;
                 Reset();
                 break;
         }
@@ -130,18 +131,39 @@ public class Dialogue {
     }
 
     private void restricted() {
-        editor = sp.edit();
-        editor.putBoolean(String.valueOf(sp.getInt("ItemState", 0)),true);
-        editor.apply();
-        if(!lock3()) {
-            failed = true;
-        } else {
-            editor = sp.edit();
-            editor.putBoolean("1" ,false);
-            editor.putBoolean("2" ,false);
-            editor.putBoolean("3" ,false);
-            editor.putBoolean("4" ,false);
-            editor.apply();
+        if (choice != null) {
+            String a = txt[lastItem].replaceAll("[^0-9]", "");
+            int b = Integer.parseInt(a);
+            Log.d(TAG, "locked: " + b);
+            switch (b) {
+                case 1:
+                    //Clue for Unarmed path
+                    if (!lock1()) {
+                        failed = true;
+                    }
+                    break;
+                case 2:
+                    if (!lock2()) {
+                        failed = true;
+                    }
+                    break;
+                case 3:
+                    //For the Sword and Shield
+                    editor = sp.edit();
+                    editor.putBoolean(String.valueOf(sp.getInt("ItemState", 0)),true);
+                    editor.apply();
+                    if(!lock3()) {
+                        failed = true;
+                    } else {
+                        editor = sp.edit();
+                        editor.putBoolean("1" ,false);
+                        editor.putBoolean("2" ,false);
+                        editor.putBoolean("3" ,false);
+                        editor.putBoolean("4" ,false);
+                        editor.apply();
+                    }
+                    break;
+            }
         }
         arrayCheck();
     }
@@ -150,42 +172,42 @@ public class Dialogue {
         //Checks which ending was activated
         Log.d(TAG, "ending: " + choice);
         switch (ending) {
-            case "b2a2b3":
+            case "b2a2b2":
                 editor = sp.edit();
                 editor.putBoolean("WitchEnd" ,true);
                 editor.apply();
                 break;
-            case "b2b2a2":
+            case "b2b2a1":
                 editor = sp.edit();
                 editor.putBoolean("KnightEnd" ,true);
                 editor.apply();
                 break;
-            case "c2c2b3":
+            case "c2c2b2":
                 editor = sp.edit();
                 editor.putBoolean("DragonEnd" ,true);
                 editor.apply();
                 break;
-            case "c2d2a3":
+            case "c2d2a2":
                 editor = sp.edit();
                 editor.putBoolean("PriestEnd" ,true);
                 editor.apply();
                 break;
-            case "d3a3d2":
+            case "d3a3d1":
                 editor = sp.edit();
                 editor.putBoolean("WitchEndPacifist" ,true);
                 editor.apply();
                 break;
-            case "d3b3d2":
+            case "d3b3d1":
                 editor = sp.edit();
                 editor.putBoolean("KnightEndPacifist" ,true);
                 editor.apply();
                 break;
-            case "d3c3d2":
+            case "d3c3d1":
                 editor = sp.edit();
                 editor.putBoolean("DragonEndPacifist" ,true);
                 editor.apply();
                 break;
-            case "d3d3d2":
+            case "d3d3d1":
                 editor = sp.edit();
                 editor.putBoolean("PriestEndPacifist" ,true);
                 editor.apply();
@@ -274,10 +296,12 @@ public class Dialogue {
     public int getTextSkip() {return textSkip;}
     public int getPopOutText() {return popOutText;}
     public boolean isFailed() {return failed;}
+    public boolean isEnded() {return ended;}
 
     //Setters
     public void setFirstTxt(String[] firstTxt) {this.firstTxt = firstTxt;}
     public void setTxt(String[] text) {this.txt = text;}
     public void setTextSkip(int textSkip) {this.textSkip = textSkip;}
+    public void setEnded(boolean state) {this.ended = state;}
 
 }
